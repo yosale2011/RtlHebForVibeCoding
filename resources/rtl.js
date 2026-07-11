@@ -701,13 +701,17 @@
             unicode-bidi: plaintext !important;
         }
 
-        .monaco-editor[data-cursor-rtl-dir="rtl"] .view-lines {
-            direction: rtl !important;
-        }
-
+        /* Per-line RTL instead of flipping the .view-lines container:
+           Monaco absolutely positions every .view-line and manages scrolling
+           assuming an LTR container. Setting direction:rtl on .view-lines
+           breaks that layout on some Monaco builds (Devin/Windsurf renders the
+           lines off-screen). Flipping each line individually keeps Monaco's
+           positioning intact and only re-aligns the text inside the line. */
         .monaco-editor[data-cursor-rtl-dir="rtl"] .view-line {
+            direction: rtl !important;
             text-align: right !important;
             unicode-bidi: plaintext !important;
+            width: var(--cursor-rtl-line-width, auto) !important;
         }
 
         /* Monaco wraps each line's text in a <span dir="ltr"> with token spans
@@ -717,13 +721,7 @@
            token spans right-to-left, so "1." and friends land on the right. */
         .monaco-editor[data-cursor-rtl-dir="rtl"] .view-line > span {
             direction: rtl !important;
-        }
-
-        /* Move the vertical scrollbar to the left edge so it doesn't sit on
-           top of the RTL text's starting margin. */
-        .monaco-editor[data-cursor-rtl-dir="rtl"] .scrollbar.vertical {
-            left: 0 !important;
-            right: auto !important;
+            unicode-bidi: plaintext !important;
         }
     `;
     document.head.appendChild(style);
@@ -1449,13 +1447,43 @@
         return getMajorityDir(sample);
     }
 
+    // The .view-line divs span Monaco's scrollable content width, which is
+    // wider than the visible text viewport (scrollBeyondLastColumn slack, and
+    // on some builds the minimap area). Right-aligned text would therefore
+    // end past the visible edge. Pin each line's width to the visible text
+    // viewport (.editor-scrollable), minus the vertical scrollbar overlay,
+    // via a CSS variable consumed by the injected stylesheet.
+    function updateEditorLineWidth(editor) {
+        try {
+            // Visible text viewport = overflow-guard minus the line-number
+            // gutter (.margin), the minimap and the vertical scrollbar. Uses
+            // only elements that exist across Monaco builds (Cursor, Devin/
+            // Windsurf); missing parts simply subtract 0.
+            var guard = editor.querySelector('.overflow-guard');
+            var base = guard || editor;
+            var width = base.clientWidth;
+            var gutter = base.querySelector('.margin');
+            var minimap = base.querySelector('.minimap');
+            var vScrollbar = base.querySelector('.scrollbar.vertical');
+            if (gutter) width -= gutter.offsetWidth || 0;
+            if (minimap) width -= minimap.offsetWidth || 0;
+            if (vScrollbar) width -= vScrollbar.offsetWidth || 0;
+            if (width > 0) {
+                editor.style.setProperty('--cursor-rtl-line-width', width + 'px');
+                editor.setAttribute('data-cursor-rtl-line-width', String(width));
+            }
+        } catch (e) {}
+    }
+
     function setEditorDir(editor, dir) {
         if (dir === 'rtl') {
+            updateEditorLineWidth(editor);
             if (editor.getAttribute('data-cursor-rtl-dir') !== 'rtl') {
                 editor.setAttribute('data-cursor-rtl-dir', 'rtl');
             }
         } else if (editor.hasAttribute('data-cursor-rtl-dir')) {
             editor.removeAttribute('data-cursor-rtl-dir');
+            editor.style.removeProperty('--cursor-rtl-line-width');
         }
     }
 
