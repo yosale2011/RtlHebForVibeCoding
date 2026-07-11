@@ -1,0 +1,117 @@
+{
+  "name": "yb-rtl",
+  "displayName": "YB RTL — Hebrew for Cursor & Codex",
+  "description": "Privacy-first RTL support for Cursor chat, plans, Monaco and the Codex agent webview.",
+  "version": "0.3.3",
+  "publisher": "local",
+  "license": "Apache-2.0",
+  "icon": "resources/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "rtl",
+    "arabic",
+    "hebrew",
+    "persian",
+    "cursor",
+    "chat",
+    "right-to-left"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursorRtl.enable",
+        "title": "Cursor RTL: Enable RTL / Fix After Update"
+      },
+      {
+        "command": "cursorRtl.disable",
+        "title": "Cursor RTL: Disable RTL Support"
+      },
+      {
+        "command": "cursorRtl.status",
+        "title": "Cursor RTL: Check Status"
+      },
+      {
+        "command": "cursorRtl.quickPick",
+        "title": "Cursor RTL: Show RTL Menu"
+      },
+      {
+        "command": "cursorRtl.setEditorRtl",
+        "title": "Cursor RTL: Code Editor Direction (Auto / Always / Off)"
+      },
+      {
+        "command": "cursorRtl.diagnostics",
+        "title": "Cursor RTL: Diagnostics"
+      },
+      {
+        "command": "rtlHebrew.enableCodex",
+        "title": "RTL Hebrew: Enable RTL in Codex"
+      },
+      {
+        "command": "rtlHebrew.disableCodex",
+        "title": "RTL Hebrew: Restore Codex Files"
+      },
+      {
+        "command": "rtlHebrew.codexStatus",
+        "title": "RTL Hebrew: Check Codex RTL Status"
+      },
+      {
+        "command": "rtlHebrew.exportDomDiagnostics",
+        "title": "RTL Hebrew: Export Devin DOM Diagnostics"
+      }
+    ],
+    "configuration": {
+      "title": "Cursor RTL",
+      "properties": {
+        "cursorRtl.editorRtl": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "always",
+            "off"
+          ],
+          "enumDescriptions": [
+            "Code editor direction follows each file's dominant language: Hebrew/Arabic/Persian files flow RTL, English and code stay LTR",
+            "Force every code editor to right-to-left",
+            "Never change the code editor's direction"
+          ],
+          "default": "auto",
+          "description": "Right-to-left direction for the code editor — the main editing pane, including Markdown and plain-text files (Monaco). Applies live to open windows; no reload needed."
+        },
+        "cursorRtl.autoReapply": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically re-apply RTL patch when Cursor updates overwrite main.js"
+        },
+        "cursorRtl.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show RTL status indicator in the status bar"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "npm run build && vsce package --no-dependencies",
+    "lint": "tsc --noEmit",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "vscode:uninstall": "node dist/uninstall.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.28.0",
+    "typescript": "^5.5.0"
+  }
+}
