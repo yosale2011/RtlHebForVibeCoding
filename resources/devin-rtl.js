@@ -151,6 +151,13 @@
             padding-inline-start: 1.5em !important;
             padding-inline-end: 0 !important;
         }
+        /* User-message bubbles shrink to their text width and anchor to the
+           container's inline-start. When the bubble content is RTL, flip the
+           wrapper's direction so the shrunken box anchors right instead of
+           left (Claude Code: userMessage_* > expandableContainer_*). */
+        [class*="userMessage" i]:has([dir="rtl"]) {
+            direction: rtl;
+        }
     `;
     document.head.appendChild(style);
 
