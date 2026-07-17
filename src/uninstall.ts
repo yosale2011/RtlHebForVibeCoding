@@ -9,27 +9,35 @@ function findMainJsCandidates(): string[] {
         const localAppData = process.env.LOCALAPPDATA || '';
         if (localAppData) {
             candidates.push(path.join(localAppData, 'Programs', 'cursor', 'resources', 'app', 'out', 'main.js'));
+            candidates.push(path.join(localAppData, 'Programs', 'Qoder', 'resources', 'app', 'out', 'main.js'));
         }
         const programFiles = process.env['ProgramFiles'] || '';
         if (programFiles) {
             candidates.push(path.join(programFiles, 'Cursor', 'resources', 'app', 'out', 'main.js'));
+            candidates.push(path.join(programFiles, 'Qoder', 'resources', 'app', 'out', 'main.js'));
         }
         const programFilesX86 = process.env['ProgramFiles(x86)'] || '';
         if (programFilesX86) {
             candidates.push(path.join(programFilesX86, 'Cursor', 'resources', 'app', 'out', 'main.js'));
+            candidates.push(path.join(programFilesX86, 'Qoder', 'resources', 'app', 'out', 'main.js'));
         }
     } else if (process.platform === 'darwin') {
         candidates.push('/Applications/Cursor.app/Contents/Resources/app/out/main.js');
+        candidates.push('/Applications/Qoder.app/Contents/Resources/app/out/main.js');
         const home = process.env.HOME || '';
         if (home) {
             candidates.push(path.join(home, 'Applications', 'Cursor.app', 'Contents', 'Resources', 'app', 'out', 'main.js'));
+            candidates.push(path.join(home, 'Applications', 'Qoder.app', 'Contents', 'Resources', 'app', 'out', 'main.js'));
         }
     } else {
         const home = process.env.HOME || '';
         candidates.push('/opt/Cursor/resources/app/out/main.js');
+        candidates.push('/opt/Qoder/resources/app/out/main.js');
         candidates.push('/usr/share/cursor/resources/app/out/main.js');
+        candidates.push('/usr/share/qoder/resources/app/out/main.js');
         if (home) {
             candidates.push(path.join(home, '.local', 'share', 'cursor', 'resources', 'app', 'out', 'main.js'));
+            candidates.push(path.join(home, '.local', 'share', 'qoder', 'resources', 'app', 'out', 'main.js'));
         }
     }
 

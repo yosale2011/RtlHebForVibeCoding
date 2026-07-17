@@ -8,6 +8,7 @@ const root = path.resolve(__dirname, '..', '..');
 test('loader discovers Devin extensions and accepts fork workbench URLs', () => {
     const loader = fs.readFileSync(path.join(root, 'resources', 'cursor-rtl-loader.cjs'), 'utf8');
     assert.match(loader, /\.devin["'], ["']extensions/);
+    assert.match(loader, /\.qoder["'], ["']extensions/);
     assert.match(loader, /\/workbench\/i\.test\(url\)/);
     assert.match(loader, /collectDomMetadata/);
     assert.match(loader, /Structural metadata only/);
@@ -36,6 +37,13 @@ test('runtime includes generic Devin chat selectors and protects code surfaces',
     assert.match(runtime, /SHADOW_LIST_STYLE/);
     assert.match(runtime, /message-content/);
     assert.match(runtime, /contenteditable/);
+    // Qoder chat: headings and prose blocks inside .streaming-prose, plus the
+    // inline-block paragraph workaround and the sent user message bubble.
+    assert.match(runtime, /\.streaming-prose h2/);
+    assert.match(runtime, /\.streaming-prose p/);
+    assert.match(runtime, /\.streaming-prose p\[dir="rtl"\]/);
+    assert.match(runtime, /\.user-message-content/);
+    assert.match(runtime, /\[class\*="markdown" i\] h1/);
     assert.match(runtime, /monaco-diff-editor/);
     assert.match(runtime, /terminal/);
     assert.match(runtime, /unicode-bidi: isolate !important/);

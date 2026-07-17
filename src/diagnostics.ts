@@ -9,6 +9,11 @@ import { action } from './actions';
 
 const LOG_TAIL_LINES = 15;
 
+// Host application name ("Cursor", "Qoder", ...) for report text.
+function hostName(): string {
+    return vscode.env.appName || 'the editor';
+}
+
 interface Finding {
     level: 'ok' | 'warn' | 'error';
     text: string;
@@ -171,8 +176,8 @@ function diagnose(d: DiagnosticsData): Finding[] {
     if (!d.mainJsExists) {
         findings.push({
             level: 'error',
-            text: `Cursor's main.js was not found at ${d.mainJsPath}.`,
-            fix: 'Cursor may be installed in a non-standard location, or this is not a Cursor window. RTL patching cannot work here.',
+            text: `${hostName()}'s main.js was not found at ${d.mainJsPath}.`,
+            fix: `${hostName()} may be installed in a non-standard location, or this is not a ${hostName()} window. RTL patching cannot work here.`,
         });
         return findings;
     }
@@ -189,7 +194,7 @@ function diagnose(d: DiagnosticsData): Finding[] {
     if (!d.patched && d.backups.length > 0) {
         findings.push({
             level: 'error',
-            text: 'A Cursor update overwrote main.js — the RTL patch is no longer applied.',
+            text: `A ${hostName()} update overwrote main.js — the RTL patch is no longer applied.`,
             fix: 'Run "Cursor RTL: Enable RTL / Fix After Update". Tip: enable cursorRtl.autoReapply to do this automatically.',
         });
     }
@@ -249,7 +254,7 @@ function diagnose(d: DiagnosticsData): Finding[] {
             text: 'main.js is not writable by the current user.',
             fix:
                 process.platform === 'win32'
-                    ? 'Future re-applies will need Cursor to run as Administrator.'
+                    ? `Future re-applies will need ${hostName()} to run as Administrator.`
                     : 'Future re-applies will need elevated permissions (see README troubleshooting).',
         });
     }
@@ -307,7 +312,7 @@ function formatReport(d: DiagnosticsData, findings: Finding[]): string {
         `| Loader (bundled) | ${d.bundledLoaderVersion ?? 'unknown'} |`,
         `| Loader (installed) | ${d.installedLoaderExists ? d.installedLoaderVersion ?? 'pre-1.3.0 (no marker)' : 'not installed'} |`,
         `| Loader (running) | ${d.runningLoaderVersion ?? 'unknown'} |`,
-        `| Cursor (VS Code API) | ${d.clientVersion} |`,
+        `| ${hostName()} (VS Code API) | ${d.clientVersion} |`,
         `| Platform | ${d.platform} ${d.arch} |`,
         '',
         '## Patch state',

@@ -17,8 +17,10 @@ function extensionRoots(): string[] {
     return [
         path.join(home, '.cursor', 'extensions'),
         path.join(home, '.vscode', 'extensions'),
+        path.join(home, '.qoder', 'extensions'),
         path.join(home, '.cursor-server', 'extensions'),
         path.join(home, '.vscode-server', 'extensions'),
+        path.join(home, '.qoder-server', 'extensions'),
     ];
 }
 

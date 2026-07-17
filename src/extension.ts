@@ -24,6 +24,12 @@ let blinkTimeout: ReturnType<typeof setTimeout> | undefined;
 
 type PatchState = 'on' | 'off' | 'update-needed';
 
+// Host application name ("Cursor", "Qoder", ...) for user-facing messages.
+// The same extension binary runs inside both IDEs; appName identifies which.
+function hostName(): string {
+    return vscode.env.appName || 'the editor';
+}
+
 function getPatchState(mainJsPath: string): PatchState {
     if (!fs.existsSync(mainJsPath)) {
         return 'off';
@@ -97,6 +103,9 @@ function updateStatusBar(state: PatchState): void {
 async function showQuickPick(): Promise<void> {
     const mainJsPath = getMainJsPath();
     const state = getPatchState(mainJsPath);
+    // The status bar is computed at activation and can go stale when the
+    // patch was applied from another window — refresh it with the live state.
+    updateStatusBar(state);
 
     const items: vscode.QuickPickItem[] = [];
 
@@ -221,7 +230,7 @@ async function enableCommand(context: vscode.ExtensionContext): Promise<void> {
         const detail = dryRun.map((a) => `• ${a}`).join('\n');
 
         const confirm = await vscode.window.showWarningMessage(
-            'Enable RTL support for Cursor?\n\nThis will modify Cursor app files.',
+            `Enable RTL support for ${hostName()}?\n\nThis will modify ${hostName()} app files.`,
             { modal: true, detail },
             'Enable'
         );
@@ -240,13 +249,13 @@ async function enableCommand(context: vscode.ExtensionContext): Promise<void> {
 
         const restart = await vscode.window.showInformationMessage(
             firstTime
-                ? 'RTL patch applied successfully! Please close and reopen all Cursor windows to activate.'
-                : 'RTL patch re-applied successfully! Please close and reopen all Cursor windows to activate.',
-            'Quit Cursor',
+                ? `RTL patch applied successfully! Please close and reopen all ${hostName()} windows to activate.`
+                : `RTL patch re-applied successfully! Please close and reopen all ${hostName()} windows to activate.`,
+            `Quit ${hostName()}`,
             'Later'
         );
 
-        if (restart === 'Quit Cursor') {
+        if (restart === `Quit ${hostName()}`) {
             await vscode.commands.executeCommand('workbench.action.quit');
         }
     } catch (err) {
@@ -280,12 +289,12 @@ async function disableCommand(): Promise<void> {
         updateStatusBar('off');
 
         const restart = await vscode.window.showInformationMessage(
-            'RTL patch removed. Please close and reopen all Cursor windows to apply changes.',
-            'Quit Cursor',
+            `RTL patch removed. Please close and reopen all ${hostName()} windows to apply changes.`,
+            `Quit ${hostName()}`,
             'Later'
         );
 
-        if (restart === 'Quit Cursor') {
+        if (restart === `Quit ${hostName()}`) {
             await vscode.commands.executeCommand('workbench.action.quit');
         }
     } catch (err) {
@@ -317,7 +326,7 @@ async function statusCommand(): Promise<void> {
             break;
         case 'update-needed': {
             const choice = await vscode.window.showWarningMessage(
-                'Cursor RTL: Cursor was updated and the patch needs to be re-applied.',
+                `Cursor RTL: ${hostName()} was updated and the patch needs to be re-applied.`,
                 'Fix Now'
             );
             if (choice === 'Fix Now') {
@@ -357,7 +366,7 @@ function checkLoaderVersionGap(context: vscode.ExtensionContext): void {
     action('loader_gap', { bundled, installed: installed ?? 'missing-or-pre-1.3.0' });
     void vscode.window
         .showWarningMessage(
-            `Cursor RTL: The loader installed in Cursor is outdated ` +
+            `Cursor RTL: The loader installed in ${hostName()} is outdated ` +
             `(installed: ${installed ?? 'unknown'}, expected: ${bundled}). ` +
             `Re-apply the RTL patch to update it.`,
             'Fix Now',
@@ -392,7 +401,7 @@ function setupFileWatcher(
                             await enableCommand(context);
                         } else {
                             const choice = await vscode.window.showWarningMessage(
-                                'Cursor was updated and the RTL patch was removed. Fix now?',
+                                `${hostName()} was updated and the RTL patch was removed. Fix now?`,
                                 'Fix Now',
                                 'Dismiss'
                             );
@@ -587,6 +596,14 @@ export function activate(context: vscode.ExtensionContext): void {
         }
         if (e.affectsConfiguration('cursorRtl.editorRtl')) {
             writeEditorConfig();
+        }
+    }, null, context.subscriptions);
+
+    // Refresh the status bar when the window regains focus — another window
+    // may have applied or removed the patch in the meantime.
+    vscode.window.onDidChangeWindowState((e) => {
+        if (e.focused) {
+            updateStatusBar(getPatchState(getMainJsPath()));
         }
     }, null, context.subscriptions);
 

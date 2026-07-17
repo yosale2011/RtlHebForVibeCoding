@@ -1,14 +1,15 @@
-# YB RTL — Hebrew for Cursor & Devin
+# YB RTL — Hebrew for Cursor, Qoder & Devin
 
-תוסף פרטיות־תחילה ליישור עברית, ערבית ופרסית ב־Cursor וב־Devin — בצ'אט המובנה,
+תוסף פרטיות־תחילה ליישור עברית, ערבית ופרסית ב־Cursor, ב־Qoder וב־Devin — בצ'אט המובנה,
 בפאנלים של סוכני AI (Claude Code, Codex) ובעורך.
 
 ## מה נתמך
 
 ### סביבות
 - **Cursor** — הצ'אט המובנה (Chat / Plan), פאנלים של תוספי סוכנים, ועורך Monaco.
+- **Qoder** — פאנל הסוכן המובנה, פאנלים של תוספי סוכנים, ועורך Monaco.
 - **Devin (desktop)** — פאנל הסוכן, פאנלים של תוספים (Claude Code, Codex) ועורך.
-- זיהוי אוטומטי של תיקיות התוספים גם ב־`.vscode`, `.cursor-server`, `.antigravity` ועוד.
+- זיהוי אוטומטי של תיקיות התוספים גם ב־`.vscode`, `.qoder`, `.cursor-server`, `.antigravity` ועוד.
 
 ### משטחי RTL
 - **צ'אט Cursor ו־Plan** — זיהוי כיוון לכל פסקה, רשימות, טבלאות וכותרות.
@@ -72,10 +73,10 @@
 
 ## מגבלות
 
-Cursor, Devin ותוספי הסוכנים אינם מספקים API רשמי לעיצוב הממשק. לכן הפתרון
-משנה קבצים פנימיים עם גיבוי מאומת. עדכון של Cursor / Devin דורס את ה־patch
-של main.js וידרוש החלה מחדש (ה־status bar יתריע); עדכון של תוסף Codex ידרוס
-את ה־patch שלו.
+Cursor, Qoder, Devin ותוספי הסוכנים אינם מספקים API רשמי לעיצוב הממשק. לכן
+הפתרון משנה קבצים פנימיים עם גיבוי מאומת. עדכון של Cursor / Qoder / Devin דורס
+את ה־patch של main.js וידרוש החלה מחדש (ה־status bar יתריע); עדכון של תוסף
+Codex ידרוס את ה־patch שלו.
 
 ## ייחוס ורישיון
 

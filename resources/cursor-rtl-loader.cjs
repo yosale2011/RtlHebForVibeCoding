@@ -12,7 +12,7 @@
     // between its bundled loader and the copy installed next to main.js to
     // detect when the installed loader is stale and a Re-apply is needed.
     // Keep the exact `var LOADER_VERSION = "x.y.z"` form — it is parsed by regex.
-    var LOADER_VERSION = "1.5.0";
+    var LOADER_VERSION = "1.6.0";
 
     function readConfig() {
         try {
@@ -80,8 +80,10 @@
         add(path.join(home, ".cursor", "extensions"));
         add(path.join(home, ".vscode", "extensions"));
         add(path.join(home, ".devin", "extensions"));
+        add(path.join(home, ".qoder", "extensions"));
         add(path.join(home, ".cursor-server", "extensions"));
         add(path.join(home, ".vscode-server", "extensions"));
+        add(path.join(home, ".qoder-server", "extensions"));
         add(path.join(home, ".antigravity", "extensions"));
         return dirs;
     }

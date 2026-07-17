@@ -6,6 +6,7 @@ node_modules/**
 scripts/**
 visual/**
 .cursor/**
+.claude/**
 upstream-*/**
 .agents/**
 LICENSE.GPL-3.0

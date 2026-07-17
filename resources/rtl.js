@@ -723,6 +723,14 @@
             direction: rtl !important;
             unicode-bidi: plaintext !important;
         }
+
+        /* Qoder renders chat prose paragraphs as inline-block: a shrink-wrapped
+           RTL paragraph sticks to the left of its LTR container no matter what
+           its dir says. Block display lets text-align:start align the text to
+           the paragraph's own direction. */
+        .streaming-prose p[dir="rtl"] {
+            display: block !important;
+        }
     `;
     document.head.appendChild(style);
     const planStyle = document.createElement('style');
@@ -792,6 +800,30 @@
         '[class*="markdown" i] ol',
         '[class*="markdown" i] li',
         '[class*="markdown" i] blockquote',
+        '[class*="markdown" i] h1',
+        '[class*="markdown" i] h2',
+        '[class*="markdown" i] h3',
+        '[class*="markdown" i] h4',
+        '[class*="markdown" i] h5',
+        '[class*="markdown" i] h6',
+        /* Qoder's assistant Markdown renders inside .streaming-prose (scoped
+           class — a generic [class*="prose"] would also match ProseMirror
+           editors, whose DOM must never get dir attributes). */
+        '.streaming-prose p',
+        '.streaming-prose ul',
+        '.streaming-prose ol',
+        '.streaming-prose li',
+        '.streaming-prose h1',
+        '.streaming-prose h2',
+        '.streaming-prose h3',
+        '.streaming-prose h4',
+        '.streaming-prose h5',
+        '.streaming-prose h6',
+        '.streaming-prose blockquote',
+        '.streaming-prose table th',
+        '.streaming-prose table td',
+        /* Qoder's sent user message bubble. */
+        '.user-message-content',
         /* Devin renders response Markdown lists without a stable wrapper class. */
         'ul',
         'ol',
