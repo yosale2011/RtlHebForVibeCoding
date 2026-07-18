@@ -6,12 +6,28 @@
 ## מה נתמך
 
 ### סביבות
+
 - **Cursor** — הצ'אט המובנה (Chat / Plan), פאנלים של תוספי סוכנים, ועורך Monaco.
 - **Qoder** — פאנל הסוכן המובנה, פאנלים של תוספי סוכנים, ועורך Monaco.
 - **Devin (desktop)** — פאנל הסוכן, פאנלים של תוספים (Claude Code, Codex) ועורך.
 - זיהוי אוטומטי של תיקיות התוספים גם ב־`.vscode`, `.qoder`, `.cursor-server`, `.antigravity` ועוד.
 
+### טבלת תאימות
+
+| משטח | Cursor | Qoder | Devin Desktop | אופן ההפעלה |
+|---|---|---|---|---|
+| צ'אט / סוכן מובנה | ✅ Chat ו־Plan | ✅ Agent | ✅ Devin agent | ה־patch הראשי |
+| Claude Code | ✅ webview | ✅ webview | ✅ webview | אוטומטי, ללא פקודה נפרדת |
+| Codex | ✅ webview | ✅ webview | ✅ webview | אוטומטי; קיים גם patch ישיר אופציונלי |
+| עורך Monaco | 🧪 Auto / Always / Off | 🧪 Auto / Always / Off | 🧪 Auto / Always / Off | דרך הגדרת מצב העורך |
+| קוד, diff ו־terminal | LTR | LTR | LTR | מוגנים משינוי כיוון |
+
+`✅` מציין תמיכה פעילה ו־`🧪` מציין תמיכה ניסיונית. פאנל Claude Code מטופל
+אוטומטית לאחר הפעלת ה־patch הראשי: ה־loader מזריק את מנגנון ה־RTL לתוך ה־webview,
+ולכן אין צורך לשנות את קובצי Claude Code או להריץ עבורו פקודה נוספת.
+
 ### משטחי RTL
+
 - **צ'אט Cursor ו־Plan** — זיהוי כיוון לכל פסקה, רשימות, טבלאות וכותרות.
 - **פאנלים של סוכנים (Claude Code, Codex, Devin agent)** — הזרקה אוטומטית לכל
   webview, כולל iframes מקוננים:
@@ -54,6 +70,11 @@
    `scripts/apply-cursor-patch.cjs` עם הרשאות מוגבהות).
 3. עבור Codex (אופציונלי) הרץ `YB RTL: Enable RTL in Codex` ואשר את רשימת הקבצים.
 4. סגור ופתח מחדש את היישום.
+
+Claude Code אינו דורש שלב התקנה נוסף. התמיכה בו מופעלת אוטומטית דרך ה־webview
+לאחר החלת ה־patch הראשי. ב־Codex מומלץ לנסות תחילה את ההזרקה האוטומטית; הפקודה
+הייעודית היא fallback אופציונלי שמתקין את מנגנון ה־RTL ישירות בחבילת ה־webview
+עם גיבוי מאומת, למקרים שבהם ההזרקה האוטומטית אינה מספיקה.
 
 לשחזור Codex הרץ `YB RTL: Restore Codex Files`. לשחזור מלא הרץ
 `YB RTL: Disable RTL Support`.
