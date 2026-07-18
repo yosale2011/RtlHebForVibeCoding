@@ -49,6 +49,9 @@ test('runtime includes generic Devin chat selectors and protects code surfaces',
     assert.match(runtime, /\[class\*="markdown" i\] table\[dir="rtl"\]/);
     assert.match(runtime, /margin-left: auto !important/);
     assert.match(runtime, /\.user-message-content/);
+        // Devin's sent user message bubble (pre-wrap text in a message-wrapper card).
+    assert.match(runtime, /message-wrapper/);
+    assert.match(runtime, /whitespace-pre-wrap/);
     assert.match(runtime, /\[class\*="markdown" i\] h1/);
     assert.match(runtime, /monaco-diff-editor/);
     assert.match(runtime, /terminal/);

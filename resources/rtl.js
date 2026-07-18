@@ -837,6 +837,11 @@
         '.streaming-prose table td',
         /* Qoder's sent user message bubble. */
         '.user-message-content',
+        /* Devin's sent user message bubble: plain pre-wrap text (no markdown
+           p/li structure) inside a Tailwind group/message-wrapper card. The
+           wrapper itself must NOT get dir (its ml-auto anchors the bubble to
+           the right) — only the text holder. */
+        '[class*="group/message-wrapper" i] [class*="whitespace-pre-wrap" i]',
         /* Devin renders response Markdown lists without a stable wrapper class. */
         'ul',
         'ol',

@@ -1,0 +1,273 @@
+y=-17213 x=1760 w=518 dir=rtl P.!mb-0 mt-0
+   align=start dir-css=rtl kids=4 len=45
+   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
+y=-17176 x=1760 w=518 dir=rtl H2.
+   align=start dir-css=rtl kids=2 len=43
+   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
+y=-17176 x=1964 w=300 dir=none STRONG.
+   align=start dir-css=rtl kids=0 len=40
+   <- h2. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
+y=-17151 x=1760 w=518 dir=rtl P.!mb-0 mt-0
+   align=start dir-css=rtl kids=3 len=46
+   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
+y=-17121 x=1760 w=518 dir=none PRE.no-fadeIn
+   align=left dir-css=ltr kids=1 len=469
+   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
+y=-17121 x=1760 w=518 dir=none DIV.group/card relative flex flex-col rounded-[10px] border
+   align=left dir-css=ltr kids=1 len=469
+   <- pre.no-fadeIn < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
+y=-17120 x=1760 w=517 dir=none DIV.relative flex flex-col overflow-hidden rounded-[9px]
+   align=left dir-css=ltr kids=3 len=469
+   <- div.group/card.relative.flex < pre.no-fadeIn < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow
+y=-17082 x=1760 w=517 dir=none DIV.
+   align=left dir-css=ltr kids=1 len=463
+   <- div.relative.flex.flex-col < div.group/card.relative.flex < pre.no-fadeIn < div.prose.prose-sm.max-w-none
+y=-17082 x=1760 w=517 dir=none DIV.language-csharp relative overflow-hidden font-mono text-xs
+   align=left dir-css=ltr kids=1 len=463
+   <- div. < div.relative.flex.flex-col < div.group/card.relative.flex < pre.no-fadeIn
+y=-17082 x=1760 w=517 dir=none PRE.
+   align=left dir-css=ltr kids=1 len=463
+   <- div.language-csharp.relative.overflow-hidden < div. < div.relative.flex.flex-col < div.group/card.relative.flex
+y=-17082 x=1760 w=517 dir=none DIV.group/hscroll relative flex min-w-0 flex-1 flex-col
+   align=left dir-css=ltr kids=2 len=463
+   <- pre. < div.language-csharp.relative.overflow-hidden < div. < div.relative.flex.flex-col
+y=-17082 x=1760 w=517 dir=none DIV.min-w-0 flex-1
+   align=left dir-css=ltr kids=1 len=463
+   <- div.group/hscroll.relative.flex < pre. < div.language-csharp.relative.overflow-hidden < div.
+y=-17082 x=1760 w=664 dir=none DIV.min-w-fit p-[1em]
+   align=left dir-css=ltr kids=1 len=463
+   <- div.min-w-0.flex-1 < div.group/hscroll.relative.flex < pre. < div.language-csharp.relative.overflow-hidden
+y=-17071 x=1771 w=642 dir=none DIV.
+   align=left dir-css=ltr kids=1 len=463
+   <- div.min-w-fit.p-[1em] < div.min-w-0.flex-1 < div.group/hscroll.relative.flex < pre.
+y=-16979 x=1771 w=642 dir=none DIV.
+   align=left dir-css=ltr kids=3 len=62
+   <- div.monaco-tokenized-source < div. < div.min-w-fit.p-[1em] < div.min-w-0.flex-1
+y=-16976 x=1808 w=362 dir=none SPAN.mtk3
+   align=left dir-css=ltr kids=0 len=56
+   <- div. < div.monaco-tokenized-source < div. < div.min-w-fit.p-[1em]
+y=-16519 x=1760 w=518 dir=rtl UL.
+   align=start dir-css=rtl kids=2 len=146
+   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
+y=-16519 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
+   align=start dir-css=rtl kids=1 len=48
+   <- ul. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
+y=-16494 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
+   align=start dir-css=rtl kids=1 len=95
+   <- ul. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
+y=-16418 x=1760 w=518 dir=rtl OL.
+   align=start dir-css=rtl kids=2 len=129
+   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
+y=-16418 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
+   align=start dir-css=rtl kids=1 len=76
+   <- ol. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
+y=-16393 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
+   align=start dir-css=rtl kids=1 len=50
+   <- ol. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
+y=-16391 x=1760 w=295 dir=rtl P.!mb-0 mt-0
+   align=start dir-css=rtl kids=5 len=50
+   <- li.leading-[1.5].[&>p]:inline < ol. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow
+y=-16293 x=1760 w=518 dir=none DIV.first:mt-0 mt-4
+   align=start dir-css=ltr kids=1 len=96
+   <- div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20 < div.cascade-scrollbar.flex.w-full
+y=-16293 x=1760 w=518 dir=none DIV.flex w-full flex-row transition-opacity duration-300 opacity-100
+   align=start dir-css=ltr kids=1 len=96
+   <- div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20
+y=-16293 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col
+   align=start dir-css=ltr kids=1 len=96
+   <- div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4
+y=-16293 x=1760 w=518 dir=none DIV.group relative after:absolute after:block after:h-[calc(100cqh-1px)] after:w-full
+   align=start dir-css=ltr kids=1 len=96
+   <- div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col
+y=-16293 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col items-stretch
+   align=start dir-css=ltr kids=1 len=96
+   <- div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4
+y=-16293 x=1760 w=518 dir=none DIV.group/message-wrapper relative flex flex-col gap-1.5 ml-auto
+   align=start dir-css=ltr kids=1 len=96
+   <- div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row
+y=-16293 x=1760 w=518 dir=none DIV.relative
+   align=start dir-css=ltr kids=2 len=96
+   <- div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow
+y=-16293 x=1760 w=518 dir=none DIV.relative w-full min-w-0 flex-1 [overflow-wrap:anywhere] [&_*]:max-w-full
+   align=start dir-css=ltr kids=1 len=96
+   <- div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute
+y=-16293 x=1760 w=518 dir=none DIV.flex w-full flex-col gap-1 p-3
+   align=start dir-css=ltr kids=1 len=96
+   <- div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow
+y=-16281 x=1772 w=494 dir=none DIV.group/collapsible relative overflow-hidden
+   align=start dir-css=ltr kids=1 len=96
+   <- div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex
+y=-16281 x=1772 w=494 dir=none DIV.
+   align=start dir-css=ltr kids=1 len=96
+   <- div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative
+y=-16281 x=1772 w=494 dir=none DIV.z-1 whitespace-pre-wrap [overflow-wrap:anywhere]
+   align=start dir-css=ltr kids=3 len=96
+   <- div. < div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0
+y=-16176 x=1760 w=518 dir=none DIV.root-fadeIn relative flex flex-row transition-opacity duration-300
+   align=start dir-css=ltr kids=1 len=500
+   <- div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col < div.flex.flex-col.px-4
+y=-16176 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col gap-1
+   align=start dir-css=ltr kids=2 len=500
+   <- div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col
+y=-16144 x=1760 w=518 dir=none DIV.mt-3
+   align=start dir-css=ltr kids=1 len=486
+   <- div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group
+y=-16144 x=1760 w=518 dir=none DIV.flex w-full flex-row items-end
+   align=start dir-css=ltr kids=1 len=486
+   <- div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5
+y=-16144 x=1760 w=518 dir=none DIV.flex min-w-0 grow flex-col gap-1
+   align=start dir-css=ltr kids=1 len=486
+   <- div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex
+y=-16144 x=1760 w=518 dir=none DIV.prose prose-sm max-w-none break-words text-13 prose-headings:mb-1
+   align=start dir-css=ltr kids=4 len=486
+   <- div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow
+y=-16115 x=1760 w=518 dir=none DIV.bg-bg-elevated border-border-secondary light:bg-clip-padding @container relative w-full
+   align=start dir-css=ltr kids=1 len=252
+   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
+y=-16114 x=1760 w=517 dir=none DIV.relative overflow-hidden
+   align=start dir-css=ltr kids=1 len=252
+   <- div.bg-bg-elevated.border-border-secondary.light:bg-clip-padding < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
+y=-16114 x=1760 w=517 dir=none DIV.focus-visible:outline-bg-accent-primary size-full rounded-[inherit] outline-none transition-[color,box-shadow] focus-visible:outline
+   align=start dir-css=ltr kids=1 len=252
+   <- div.relative.overflow-hidden < div.bg-bg-elevated.border-border-secondary.light:bg-clip-padding < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow
+y=-16114 x=1760 w=517 dir=none TABLE.text-13 text-text-secondary w-full caption-bottom overflow-x-clip
+   align=start dir-css=ltr kids=2 len=252
+   <- div.focus-visible:outline-bg-accent-primary.size-full.rounded-[inherit] < div.relative.overflow-hidden < div.bg-bg-elevated.border-border-secondary.light:bg-clip-padding < div.prose.prose-sm.max-w-none
+y=-15616 x=1896 w=335 dir=none SPAN.
+   align=start dir-css=rtl kids=0 len=55
+   <- p.!mb-0.mt-0 < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
+y=-15597 x=1760 w=518 dir=rtl P.!mb-0 mt-0
+   align=start dir-css=rtl kids=2 len=45
+   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
+y=-15537 x=1760 w=518 dir=none DIV.root-fadeIn relative flex flex-row transition-opacity duration-300
+   align=start dir-css=ltr kids=1 len=99
+   <- div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col < div.flex.flex-col.px-4
+y=-15537 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col gap-1
+   align=start dir-css=ltr kids=2 len=99
+   <- div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col
+y=-15505 x=1760 w=518 dir=none DIV.mt-3
+   align=start dir-css=ltr kids=1 len=84
+   <- div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group
+y=-15505 x=1760 w=518 dir=none DIV.flex w-full flex-row items-end
+   align=start dir-css=ltr kids=1 len=84
+   <- div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5
+y=-15505 x=1760 w=518 dir=none DIV.flex min-w-0 grow flex-col gap-1
+   align=start dir-css=ltr kids=1 len=84
+   <- div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex
+y=-15505 x=1760 w=518 dir=none DIV.prose prose-sm max-w-none break-words text-13 prose-headings:mb-1
+   align=start dir-css=ltr kids=1 len=84
+   <- div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow
+y=-15410 x=1760 w=518 dir=none DIV.first:mt-0 mt-4
+   align=start dir-css=ltr kids=1 len=100
+   <- div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20 < div.cascade-scrollbar.flex.w-full
+y=-15410 x=1760 w=518 dir=none DIV.flex w-full flex-row transition-opacity duration-300 opacity-100
+   align=start dir-css=ltr kids=1 len=100
+   <- div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20
+y=-15410 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col
+   align=start dir-css=ltr kids=1 len=100
+   <- div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4
+y=-15410 x=1760 w=518 dir=none DIV.group relative after:absolute after:block after:h-[calc(100cqh-1px)] after:w-full
+   align=start dir-css=ltr kids=1 len=100
+   <- div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col
+y=-15410 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col items-stretch
+   align=start dir-css=ltr kids=1 len=100
+   <- div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4
+y=-15410 x=1760 w=518 dir=none DIV.group/message-wrapper relative flex flex-col gap-1.5 ml-auto
+   align=start dir-css=ltr kids=1 len=100
+   <- div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row
+y=-15410 x=1760 w=518 dir=none DIV.relative
+   align=start dir-css=ltr kids=2 len=100
+   <- div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow
+y=-15410 x=1760 w=518 dir=none DIV.relative w-full min-w-0 flex-1 [overflow-wrap:anywhere] [&_*]:max-w-full
+   align=start dir-css=ltr kids=1 len=100
+   <- div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute
+y=-15410 x=1760 w=518 dir=none DIV.flex w-full flex-col gap-1 p-3
+   align=start dir-css=ltr kids=1 len=100
+   <- div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow
+y=-15398 x=1772 w=494 dir=none DIV.group/collapsible relative overflow-hidden
+   align=start dir-css=ltr kids=1 len=100
+   <- div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex
+y=-15398 x=1772 w=494 dir=none DIV.
+   align=start dir-css=ltr kids=1 len=100
+   <- div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative
+y=-15398 x=1772 w=494 dir=none DIV.z-1 whitespace-pre-wrap [overflow-wrap:anywhere]
+   align=start dir-css=ltr kids=3 len=100
+   <- div. < div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0
+y=-15398 x=1772 w=466 dir=none SPAN.
+   align=start dir-css=ltr kids=0 len=84
+   <- div.z-1.whitespace-pre-wrap.[overflow-wrap:anywhere] < div. < div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col
+y=-15272 x=1760 w=518 dir=none DIV.root-fadeIn relative flex flex-row transition-opacity duration-300
+   align=start dir-css=ltr kids=1 len=93
+   <- div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col < div.flex.flex-col.px-4
+y=-15272 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col gap-1
+   align=start dir-css=ltr kids=2 len=93
+   <- div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col
+y=-15240 x=1760 w=518 dir=none DIV.mt-3
+   align=start dir-css=ltr kids=1 len=79
+   <- div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group
+y=-15240 x=1760 w=518 dir=none DIV.flex w-full flex-row items-end
+   align=start dir-css=ltr kids=1 len=79
+   <- div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5
+y=-15240 x=1760 w=518 dir=none DIV.flex min-w-0 grow flex-col gap-1
+   align=start dir-css=ltr kids=1 len=79
+   <- div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex
+y=-15240 x=1760 w=518 dir=none DIV.prose prose-sm max-w-none break-words text-13 prose-headings:mb-1
+   align=start dir-css=ltr kids=1 len=79
+   <- div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow
+y=-14883 x=1760 w=518 dir=rtl UL.
+   align=start dir-css=rtl kids=3 len=154
+   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
+y=-14883 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
+   align=start dir-css=rtl kids=1 len=50
+   <- ul. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
+y=-14859 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
+   align=start dir-css=rtl kids=1 len=74
+   <- ul. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
+y=-14668 x=1760 w=518 dir=none DIV.first:mt-0 mt-4
+   align=start dir-css=ltr kids=1 len=69
+   <- div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20 < div.cascade-scrollbar.flex.w-full
+y=-14668 x=1760 w=518 dir=none DIV.flex w-full flex-row transition-opacity duration-300 opacity-100
+   align=start dir-css=ltr kids=1 len=69
+   <- div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20
+y=-14668 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col
+   align=start dir-css=ltr kids=1 len=69
+   <- div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4
+y=-14668 x=1760 w=518 dir=none DIV.group relative after:absolute after:block after:h-[calc(100cqh-1px)] after:w-full
+   align=start dir-css=ltr kids=1 len=69
+   <- div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col
+y=-14668 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col items-stretch
+   align=start dir-css=ltr kids=1 len=69
+   <- div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4
+y=-14668 x=1828 w=449 dir=none DIV.group/message-wrapper relative flex flex-col gap-1.5 ml-auto
+   align=start dir-css=ltr kids=1 len=69
+   <- div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row
+y=-14668 x=1828 w=449 dir=none DIV.relative
+   align=start dir-css=ltr kids=2 len=69
+   <- div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow
+y=-14668 x=1828 w=449 dir=none DIV.relative w-full min-w-0 flex-1 [overflow-wrap:anywhere] [&_*]:max-w-full
+   align=start dir-css=ltr kids=1 len=69
+   <- div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute
+y=-14668 x=1828 w=449 dir=none DIV.flex w-full flex-col gap-1 p-3
+   align=start dir-css=ltr kids=1 len=69
+   <- div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow
+y=-14656 x=1840 w=425 dir=none DIV.group/collapsible relative overflow-hidden
+   align=start dir-css=ltr kids=1 len=69
+   <- div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex
+y=-14656 x=1840 w=425 dir=none DIV.
+   align=start dir-css=ltr kids=1 len=69
+   <- div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative
+y=-14656 x=1840 w=425 dir=none DIV.z-1 whitespace-pre-wrap [overflow-wrap:anywhere]
+   align=start dir-css=ltr kids=1 len=69
+   <- div. < div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0
+y=-14656 x=1840 w=425 dir=none SPAN.
+   align=start dir-css=ltr kids=0 len=69
+   <- div.z-1.whitespace-pre-wrap.[overflow-wrap:anywhere] < div. < div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col
+y=0 x=532 w=1762 dir=none DIV.split-view-view visible
+   align=start dir-css=ltr kids=1 len=113
+   <- div.split-view-container < div.monaco-scrollable-element. < div.monaco-split-view2.vertical < div.monaco-grid-branch-node
+y=0 x=532 w=1762 dir=none DIV.part titlebar inactive
+   align=start dir-css=ltr kids=1 len=113
+   <- div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element. < div.monaco-split-view2.vertical
+y=0 x=532 w=1762 dir=none DIV.titlebar-container has-center
+   align=start dir-css=ltr kids=4 len=113
+   <- div.part.titlebar.inactive < div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element.
