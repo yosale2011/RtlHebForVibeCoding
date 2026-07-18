@@ -42,6 +42,12 @@ test('runtime includes generic Devin chat selectors and protects code surfaces',
     assert.match(runtime, /\.streaming-prose h2/);
     assert.match(runtime, /\.streaming-prose p/);
     assert.match(runtime, /\.streaming-prose p\[dir="rtl"\]/);
+        // Qoder chat tables: the table element itself needs dir (column order)
+        // and an RTL table must be pushed to the right edge of its LTR container.
+    assert.match(runtime, /'\.streaming-prose table',/);
+    assert.match(runtime, /\.streaming-prose table\[dir="rtl"\]/);
+    assert.match(runtime, /\[class\*="markdown" i\] table\[dir="rtl"\]/);
+    assert.match(runtime, /margin-left: auto !important/);
     assert.match(runtime, /\.user-message-content/);
     assert.match(runtime, /\[class\*="markdown" i\] h1/);
     assert.match(runtime, /monaco-diff-editor/);
@@ -53,5 +59,9 @@ test('Devin webview uses a minimal layout-safe runtime', () => {
     const runtime = fs.readFileSync(path.join(root, 'resources', 'devin-rtl.js'), 'utf8');
     assert.match(runtime, /p,li,h1/);
     assert.match(runtime, /pre,code/);
+    // Claude Code tables: the table element itself gets dir (column order)
+    // and RTL tables are anchored to the right edge.
+    assert.match(runtime, /querySelectorAll\('table'\)/);
+    assert.match(runtime, /table\[dir="rtl"\]/);
     assert.doesNotMatch(runtime, /monaco-editor|position:\s*absolute|transform:/);
 });

@@ -1,10 +1,14 @@
 {
   "name": "yb-rtl",
-  "displayName": "YB RTL — Hebrew for Cursor, Qoder & Codex",
-  "description": "Privacy-first RTL support for Cursor and Qoder chat, plans, Monaco and the Codex agent webview.",
-  "version": "0.4.2",
+  "displayName": "YB RTL — Hebrew for Cursor, Qoder, Devin & AI Agents",
+  "description": "Privacy-first RTL support for Cursor, Qoder and Devin chat, Monaco, Codex and Claude Code agent webviews.",
+  "version": "0.4.5",
   "publisher": "local",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yosale2011/RtlHebForVibeCoding.git"
+  },
   "icon": "resources/icon.png",
   "engines": {
     "vscode": "^1.85.0"
@@ -30,47 +34,51 @@
     "commands": [
       {
         "command": "cursorRtl.enable",
-        "title": "Cursor RTL: Enable RTL / Fix After Update"
+        "title": "YB RTL: Enable RTL / Fix After Update"
       },
       {
         "command": "cursorRtl.disable",
-        "title": "Cursor RTL: Disable RTL Support"
+        "title": "YB RTL: Disable RTL Support"
       },
       {
         "command": "cursorRtl.status",
-        "title": "Cursor RTL: Check Status"
+        "title": "YB RTL: Check Status"
       },
       {
         "command": "cursorRtl.quickPick",
-        "title": "Cursor RTL: Show RTL Menu"
+        "title": "YB RTL: Show RTL Menu"
       },
       {
         "command": "cursorRtl.setEditorRtl",
-        "title": "Cursor RTL: Code Editor Direction (Auto / Always / Off)"
+        "title": "YB RTL: Code Editor Direction (Auto / Always / Off)"
       },
       {
         "command": "cursorRtl.diagnostics",
-        "title": "Cursor RTL: Diagnostics"
+        "title": "YB RTL: Diagnostics"
+      },
+      {
+        "command": "cursorRtl.checkUpdates",
+        "title": "YB RTL: Check for Updates from GitHub"
       },
       {
         "command": "rtlHebrew.enableCodex",
-        "title": "RTL Hebrew: Enable RTL in Codex"
+        "title": "YB RTL: Enable RTL in Codex"
       },
       {
         "command": "rtlHebrew.disableCodex",
-        "title": "RTL Hebrew: Restore Codex Files"
+        "title": "YB RTL: Restore Codex Files"
       },
       {
         "command": "rtlHebrew.codexStatus",
-        "title": "RTL Hebrew: Check Codex RTL Status"
+        "title": "YB RTL: Check Codex RTL Status"
       },
       {
         "command": "rtlHebrew.exportDomDiagnostics",
-        "title": "RTL Hebrew: Export Devin DOM Diagnostics"
+        "title": "YB RTL: Export Webview DOM Diagnostics"
       }
     ],
     "configuration": {
-      "title": "Cursor RTL",
+      "title": "YB RTL",
       "properties": {
         "cursorRtl.editorRtl": {
           "type": "string",
@@ -90,7 +98,7 @@
         "cursorRtl.autoReapply": {
           "type": "boolean",
           "default": false,
-          "description": "Automatically re-apply RTL patch when Cursor updates overwrite main.js"
+          "description": "Automatically re-apply the RTL patch when a host application update overwrites main.js"
         },
         "cursorRtl.showStatusBar": {
           "type": "boolean",

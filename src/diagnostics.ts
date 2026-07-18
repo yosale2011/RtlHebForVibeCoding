@@ -185,8 +185,8 @@ function diagnose(d: DiagnosticsData): Finding[] {
     if (!d.patched && d.backups.length === 0) {
         findings.push({
             level: 'warn',
-            text: 'The RTL patch has never been applied in this Cursor installation.',
-            fix: 'Run "Cursor RTL: Enable RTL Support" and restart Cursor.',
+            text: `The RTL patch has never been applied in this ${hostName()} installation.`,
+            fix: `Run "YB RTL: Enable RTL / Fix After Update" and restart ${hostName()}.`,
         });
         return findings;
     }
@@ -195,15 +195,15 @@ function diagnose(d: DiagnosticsData): Finding[] {
         findings.push({
             level: 'error',
             text: `A ${hostName()} update overwrote main.js — the RTL patch is no longer applied.`,
-            fix: 'Run "Cursor RTL: Enable RTL / Fix After Update". Tip: enable cursorRtl.autoReapply to do this automatically.',
+            fix: 'Run "YB RTL: Enable RTL / Fix After Update". Tip: enable cursorRtl.autoReapply to do this automatically.',
         });
     }
 
     if (d.patched && !d.installedLoaderExists) {
         findings.push({
             level: 'error',
-            text: `main.js is patched but the loader file is missing (${d.installedLoaderPath}). Cursor logs a load error and RTL stays off.`,
-            fix: 'Run "Cursor RTL: Enable RTL / Fix After Update" to restore the loader.',
+            text: `main.js is patched but the loader file is missing (${d.installedLoaderPath}). ${hostName()} logs a load error and RTL stays off.`,
+            fix: 'Run "YB RTL: Enable RTL / Fix After Update" to restore the loader.',
         });
     }
 
@@ -215,7 +215,7 @@ function diagnose(d: DiagnosticsData): Finding[] {
         findings.push({
             level: 'warn',
             text: `The installed loader (${d.installedLoaderVersion ?? 'pre-1.3.0'}) is older than the one bundled with this extension (${d.bundledLoaderVersion}).`,
-            fix: 'Run "Cursor RTL: Enable RTL / Fix After Update". If it fails with a permission error, run Cursor as Administrator once and retry.',
+            fix: `Run "YB RTL: Enable RTL / Fix After Update". If it fails with a permission error, run ${hostName()} as Administrator once and retry.`,
         });
     }
 
@@ -223,7 +223,7 @@ function diagnose(d: DiagnosticsData): Finding[] {
         findings.push({
             level: 'warn',
             text: 'main.js is patched but the loader has not written its log — the patched code has not run yet.',
-            fix: 'Close ALL Cursor windows and reopen (a full restart, not just a window reload).',
+            fix: `Close ALL ${hostName()} windows and reopen (a full restart, not just a window reload).`,
         });
     }
 
@@ -235,8 +235,8 @@ function diagnose(d: DiagnosticsData): Finding[] {
     ) {
         findings.push({
             level: 'warn',
-            text: `Cursor is still running loader ${d.runningLoaderVersion}, but ${d.installedLoaderVersion} is installed on disk.`,
-            fix: 'Close ALL Cursor windows and reopen so the updated loader is loaded.',
+            text: `${hostName()} is still running loader ${d.runningLoaderVersion}, but ${d.installedLoaderVersion} is installed on disk.`,
+            fix: `Close ALL ${hostName()} windows and reopen so the updated loader is loaded.`,
         });
     }
 
@@ -263,7 +263,7 @@ function diagnose(d: DiagnosticsData): Finding[] {
         findings.push({
             level: 'warn',
             text: 'main.js does not contain the expected Microsoft copyright signature.',
-            fix: 'This Cursor version may be unsupported; the Enable / Fix command will refuse to patch it.',
+            fix: `This ${hostName()} version may be unsupported; the Enable / Fix command will refuse to patch it.`,
         });
     }
 
@@ -284,7 +284,7 @@ function formatReport(d: DiagnosticsData, findings: Finding[]): string {
     const yesNo = (v: boolean | null) => (v === null ? 'unknown' : v ? 'yes' : 'no');
 
     const lines: string[] = [
-        '# Cursor RTL — Diagnostics Report',
+        '# YB RTL — Diagnostics Report',
         '',
         `_Generated: ${new Date().toISOString()}_`,
         '',
@@ -368,7 +368,7 @@ export async function runDiagnostics(context: vscode.ExtensionContext): Promise<
     await vscode.window.showTextDocument(doc, { preview: false });
 
     const copy = await vscode.window.showInformationMessage(
-        'Cursor RTL: Diagnostics report ready.',
+        'YB RTL: Diagnostics report ready.',
         'Copy to Clipboard'
     );
     if (copy === 'Copy to Clipboard') {

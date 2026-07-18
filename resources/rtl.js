@@ -731,6 +731,17 @@
         .streaming-prose p[dir="rtl"] {
             display: block !important;
         }
+
+        /* A table's column order follows the table element's own direction,
+           so the table (not just its cells) needs dir. A shrink-wrapped RTL
+           table still hugs the left of its LTR container because block
+           placement follows the container's direction — margin-left:auto
+           pushes it to the right edge. */
+        .streaming-prose table[dir="rtl"],
+        [class*="markdown" i] table[dir="rtl"] {
+            margin-left: auto !important;
+            margin-right: 0 !important;
+        }
     `;
     document.head.appendChild(style);
     const planStyle = document.createElement('style');
@@ -800,6 +811,7 @@
         '[class*="markdown" i] ol',
         '[class*="markdown" i] li',
         '[class*="markdown" i] blockquote',
+        '[class*="markdown" i] table',
         '[class*="markdown" i] h1',
         '[class*="markdown" i] h2',
         '[class*="markdown" i] h3',
@@ -820,6 +832,7 @@
         '.streaming-prose h5',
         '.streaming-prose h6',
         '.streaming-prose blockquote',
+        '.streaming-prose table',
         '.streaming-prose table th',
         '.streaming-prose table td',
         /* Qoder's sent user message bubble. */

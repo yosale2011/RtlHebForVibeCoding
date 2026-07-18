@@ -10,7 +10,6 @@ visual/**
 upstream-*/**
 .agents/**
 LICENSE.GPL-3.0
-LICENSE.Apache-2.0
 tsconfig.json
 esbuild.js
 .gitignore

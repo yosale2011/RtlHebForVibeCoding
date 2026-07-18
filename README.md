@@ -1,4 +1,4 @@
-# YB RTL — Hebrew for Cursor, Qoder & Devin
+# YB RTL — Hebrew for Cursor, Qoder, Devin & AI Agents
 
 תוסף פרטיות־תחילה ליישור עברית, ערבית ופרסית ב־Cursor, ב־Qoder וב־Devin — בצ'אט המובנה,
 בפאנלים של סוכני AI (Claude Code, Codex) ובעורך.
@@ -32,8 +32,8 @@
 
 ### תפעול
 - מצבי עורך חיים דרך `~/.cursor-rtl-config.json` — שינוי חל בלי restart.
-- Status bar עם התראת "UPDATE NEEDED" אחרי עדכון של Cursor, ו־auto-reapply אופציונלי.
-- ייצוא אבחון DOM (`RTL Hebrew: Export DOM Diagnostics`) — מטא־דטה מבני בלבד,
+- Status bar עם התראת "UPDATE NEEDED" אחרי עדכון של היישום המארח, ו־auto-reapply אופציונלי.
+- ייצוא אבחון DOM (`YB RTL: Export Webview DOM Diagnostics`) — מטא־דטה מבני בלבד,
   ללא תוכן שיחות.
 - לוג מפורט ב־`~/cursor-rtl.log`.
 
@@ -49,18 +49,19 @@
 ## התקנה ושימוש
 
 1. התקן את קובץ ה־VSIX דרך `Extensions: Install from VSIX...`.
-2. הרץ `Cursor RTL: Enable RTL / Fix After Update` (ב־Windows עם התקנה תחת
+2. הרץ `YB RTL: Enable RTL / Fix After Update` (ב־Windows עם התקנה תחת
    `Program Files` נדרשת הרצה חד־פעמית כ־Administrator, או השתמש ב־
    `scripts/apply-cursor-patch.cjs` עם הרשאות מוגבהות).
-3. עבור Codex (אופציונלי) הרץ `RTL Hebrew: Enable RTL in Codex` ואשר את רשימת הקבצים.
+3. עבור Codex (אופציונלי) הרץ `YB RTL: Enable RTL in Codex` ואשר את רשימת הקבצים.
 4. סגור ופתח מחדש את היישום.
 
-לשחזור Codex הרץ `RTL Hebrew: Restore Codex Files`. לשחזור מלא הרץ
-`Cursor RTL: Disable RTL Support`.
+לשחזור Codex הרץ `YB RTL: Restore Codex Files`. לשחזור מלא הרץ
+`YB RTL: Disable RTL Support`.
 
 ### מצב יישור העורך
 
-`Cursor RTL: Set Editor RTL Mode` או עריכת `~/.cursor-rtl-config.json`:
+`YB RTL: Code Editor Direction (Auto / Always / Off)` או עריכת
+`~/.cursor-rtl-config.json`:
 
 | מצב | התנהגות |
 |---|---|

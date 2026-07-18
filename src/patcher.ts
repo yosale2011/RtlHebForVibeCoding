@@ -68,7 +68,7 @@ export function applyPatch(mainJsPath: string): void {
     if (!content.includes('Copyright (C) Microsoft Corporation')) {
         throw new Error(
             'main.js does not contain the expected Microsoft copyright signature. ' +
-            'This file may be corrupted or from an unsupported Cursor version.'
+            'This file may be corrupted or from an unsupported host application version.'
         );
     }
 
@@ -190,11 +190,11 @@ export function handlePermissionError(err: unknown): string {
     const code = (err as NodeJS.ErrnoException).code;
     if (code === 'EPERM' || code === 'EACCES') {
         if (process.platform === 'win32') {
-            return 'Permission denied. Try running Cursor as Administrator (right-click → Run as administrator).';
+            return 'Permission denied. Try running the host application as Administrator (right-click → Run as administrator).';
         } else if (process.platform === 'darwin') {
-            return 'Permission denied. Try running: sudo chown -R $USER Cursor.app/Contents/Resources/app/out/';
+            return 'Permission denied. Fix ownership of the host application\'s Contents/Resources/app/out directory and retry.';
         } else {
-            return 'Permission denied. Try running Cursor with elevated privileges or fixing file permissions.';
+            return 'Permission denied. Try running the host application with elevated privileges or fixing file permissions.';
         }
     }
     return `Unexpected error: ${err}`;

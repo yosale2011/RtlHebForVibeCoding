@@ -121,6 +121,13 @@
             setDir(el, dir);
             if (dir === 'rtl') ensureRlm(el);
         });
+        // Tables: cells are handled individually via BLOCKS, but the table
+        // element itself needs dir too — column order follows the table's own
+        // direction, and the CSS below anchors RTL tables to the right edge.
+        root.querySelectorAll('table').forEach((el) => {
+            if (el.closest(SKIP)) return;
+            setDir(el, dirFor(el.textContent));
+        });
         root.querySelectorAll(LISTS).forEach((el) => {
             // Nested lists inherit the top-level list's direction.
             if (el.parentElement && el.parentElement.closest('ul,ol,[role="list"]')) {
@@ -157,6 +164,14 @@
            left (Claude Code: userMessage_* > expandableContainer_*). */
         [class*="userMessage" i]:has([dir="rtl"]) {
             direction: rtl;
+        }
+        /* A table's column order follows the table element's own direction.
+           A shrink-wrapped RTL table still anchors to the left of its LTR
+           container (block placement follows the container's direction), so
+           margin-left:auto pushes it to the right edge. */
+        table[dir="rtl"] {
+            margin-left: auto !important;
+            margin-right: 0 !important;
         }
     `;
     document.head.appendChild(style);

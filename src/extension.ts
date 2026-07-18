@@ -14,6 +14,7 @@ import {
 } from './patcher';
 import { LOADER_FILENAME } from './constants';
 import { runDiagnostics } from './diagnostics';
+import { runUpdateCheck } from './updater';
 import { init as initActions, action, error as actionError, dispose as disposeActions } from './actions';
 import { findCodexTargets, patchCodex, restoreCodex } from './agentPatcher';
 
@@ -92,7 +93,7 @@ function updateStatusBar(state: PatchState): void {
         case 'update-needed':
             statusBarItem.text = '$(warning) RTL: UPDATE NEEDED';
             statusBarItem.tooltip =
-                'Cursor was updated and the RTL patch needs to be re-applied. Click for options.';
+                `${hostName()} was updated and the RTL patch needs to be re-applied. Click for options.`;
             startBlink('statusBarItem.warningBackground');
             break;
     }
@@ -100,7 +101,8 @@ function updateStatusBar(state: PatchState): void {
     statusBarItem.show();
 }
 
-async function showQuickPick(): Promise<void> {
+async function showQuickPick(context: vscode.ExtensionContext): Promise<void> {
+    const version = getExtensionVersion(context);
     const mainJsPath = getMainJsPath();
     const state = getPatchState(mainJsPath);
     // The status bar is computed at activation and can go stale when the
@@ -116,12 +118,12 @@ async function showQuickPick(): Promise<void> {
         );
     } else if (state === 'update-needed') {
         items.push(
-            { label: '$(refresh) Fix RTL After Cursor Update', description: 'Re-apply the patch that the Cursor update removed' },
+            { label: `$(refresh) Fix RTL After ${hostName()} Update`, description: `Re-apply the patch that the ${hostName()} update removed` },
             { label: '$(info) Check Status', description: 'Show current RTL patch status' }
         );
     } else {
         items.push(
-            { label: '$(check) Enable RTL', description: 'Apply RTL patch to Cursor' },
+            { label: '$(check) Enable RTL', description: `Apply the RTL patch to ${hostName()}` },
             { label: '$(info) Check Status', description: 'Show current RTL patch status' }
         );
     }
@@ -136,8 +138,14 @@ async function showQuickPick(): Promise<void> {
         description: 'Generate a full diagnostics report',
     });
 
+    items.push({
+        label: '$(cloud-download) Check for Updates',
+        description: `Installed: YB RTL ${version}`,
+    });
+
     const picked = await vscode.window.showQuickPick(items, {
-        placeHolder: 'Cursor RTL',
+        placeHolder: 'Select an action',
+        title: `YB RTL ${version}`,
     });
 
     if (!picked) {
@@ -152,6 +160,8 @@ async function showQuickPick(): Promise<void> {
         await vscode.commands.executeCommand('cursorRtl.setEditorRtl');
     } else if (picked.label.includes('Diagnostics')) {
         await vscode.commands.executeCommand('cursorRtl.diagnostics');
+    } else if (picked.label.includes('Check for Updates')) {
+        await vscode.commands.executeCommand('cursorRtl.checkUpdates');
     } else if (picked.label.includes('Status')) {
         await vscode.commands.executeCommand('cursorRtl.status');
     }
@@ -217,7 +227,7 @@ async function setEditorRtlCommand(): Promise<void> {
 async function enableCommand(context: vscode.ExtensionContext): Promise<void> {
     const validation = validatePaths();
     if (!validation.valid) {
-        vscode.window.showErrorMessage(`Cursor RTL: ${validation.error}`);
+        vscode.window.showErrorMessage(`YB RTL: ${validation.error}`);
         return;
     }
 
@@ -260,14 +270,14 @@ async function enableCommand(context: vscode.ExtensionContext): Promise<void> {
         }
     } catch (err) {
         actionError(err, { op: firstTime ? 'patch_apply' : 'patch_reapply' });
-        vscode.window.showErrorMessage(`Cursor RTL: ${handlePermissionError(err)}`);
+        vscode.window.showErrorMessage(`YB RTL: ${handlePermissionError(err)}`);
     }
 }
 
 async function disableCommand(): Promise<void> {
     const validation = validatePaths();
     if (!validation.valid) {
-        vscode.window.showErrorMessage(`Cursor RTL: ${validation.error}`);
+        vscode.window.showErrorMessage(`YB RTL: ${validation.error}`);
         return;
     }
 
@@ -299,14 +309,14 @@ async function disableCommand(): Promise<void> {
         }
     } catch (err) {
         actionError(err, { op: 'patch_remove' });
-        vscode.window.showErrorMessage(`Cursor RTL: ${handlePermissionError(err)}`);
+        vscode.window.showErrorMessage(`YB RTL: ${handlePermissionError(err)}`);
     }
 }
 
 async function statusCommand(): Promise<void> {
     const validation = validatePaths();
     if (!validation.valid) {
-        vscode.window.showErrorMessage(`Cursor RTL: ${validation.error}`);
+        vscode.window.showErrorMessage(`YB RTL: ${validation.error}`);
         return;
     }
 
@@ -316,17 +326,17 @@ async function statusCommand(): Promise<void> {
     switch (state) {
         case 'on':
             vscode.window.showInformationMessage(
-                'Cursor RTL: Patch is ACTIVE. RTL support is enabled.'
+                'YB RTL: Patch is ACTIVE. RTL support is enabled.'
             );
             break;
         case 'off':
             vscode.window.showInformationMessage(
-                'Cursor RTL: Patch is NOT applied. Use "Cursor RTL: Enable" to activate.'
+                'YB RTL: Patch is NOT applied. Use "YB RTL: Enable RTL / Fix After Update" to activate.'
             );
             break;
         case 'update-needed': {
             const choice = await vscode.window.showWarningMessage(
-                `Cursor RTL: ${hostName()} was updated and the patch needs to be re-applied.`,
+                `YB RTL: ${hostName()} was updated and the patch needs to be re-applied.`,
                 'Fix Now'
             );
             if (choice === 'Fix Now') {
@@ -366,7 +376,7 @@ function checkLoaderVersionGap(context: vscode.ExtensionContext): void {
     action('loader_gap', { bundled, installed: installed ?? 'missing-or-pre-1.3.0' });
     void vscode.window
         .showWarningMessage(
-            `Cursor RTL: The loader installed in ${hostName()} is outdated ` +
+            `YB RTL: The loader installed in ${hostName()} is outdated ` +
             `(installed: ${installed ?? 'unknown'}, expected: ${bundled}). ` +
             `Re-apply the RTL patch to update it.`,
             'Fix Now',
@@ -433,12 +443,12 @@ async function exportDomDiagnostics(): Promise<void> {
             diagnosticsReportPath: reportPath,
         }));
     } catch (err) {
-        vscode.window.showErrorMessage(`RTL Hebrew: Could not request diagnostics: ${err}`);
+        vscode.window.showErrorMessage(`YB RTL: Could not request diagnostics: ${err}`);
         return;
     }
 
     await vscode.window.withProgress(
-        { location: vscode.ProgressLocation.Notification, title: 'RTL Hebrew: Collecting DOM metadata…' },
+        { location: vscode.ProgressLocation.Notification, title: 'YB RTL: Collecting DOM metadata…' },
         () => new Promise<void>((resolve) => {
             const started = Date.now();
             const timer = setInterval(() => {
@@ -451,7 +461,7 @@ async function exportDomDiagnostics(): Promise<void> {
     );
 
     if (!fs.existsSync(reportPath)) {
-        vscode.window.showWarningMessage('RTL Hebrew: No DOM report was produced. Re-apply the patch and restart Devin.');
+        vscode.window.showWarningMessage(`YB RTL: No DOM report was produced. Re-apply the patch and restart ${hostName()}.`);
         return;
     }
     const document = await vscode.workspace.openTextDocument(reportPath);
@@ -461,7 +471,7 @@ async function exportDomDiagnostics(): Promise<void> {
 async function enableCodexRtl(context: vscode.ExtensionContext): Promise<void> {
     const targets = findCodexTargets().filter((target) => !target.patched);
     if (targets.length === 0) {
-        vscode.window.showInformationMessage('RTL Hebrew: No unpatched Codex installation was found.');
+        vscode.window.showInformationMessage('YB RTL: No unpatched Codex installation was found.');
         return;
     }
     const details = targets.map((target) => `• ${target.file}`).join('\n');
@@ -474,7 +484,7 @@ async function enableCodexRtl(context: vscode.ExtensionContext): Promise<void> {
     const runtime = path.join(context.extensionPath, 'resources', 'codex-rtl.js');
     try {
         for (const target of targets) patchCodex(target, runtime);
-        vscode.window.showInformationMessage('Codex RTL enabled. Restart the Extension Host or reload Cursor.');
+        vscode.window.showInformationMessage(`Codex RTL enabled. Restart the Extension Host or reload ${hostName()}.`);
     } catch (err) {
         actionError(err, { op: 'codex_patch' });
         vscode.window.showErrorMessage(`Could not enable Codex RTL: ${err instanceof Error ? err.message : String(err)}`);
@@ -484,7 +494,7 @@ async function enableCodexRtl(context: vscode.ExtensionContext): Promise<void> {
 async function disableCodexRtl(): Promise<void> {
     const targets = findCodexTargets().filter((target) => target.backup);
     if (targets.length === 0) {
-        vscode.window.showInformationMessage('RTL Hebrew: No Codex backups were found.');
+        vscode.window.showInformationMessage('YB RTL: No Codex backups were found.');
         return;
     }
     const choice = await vscode.window.showWarningMessage(
@@ -495,7 +505,7 @@ async function disableCodexRtl(): Promise<void> {
     if (choice !== 'Restore') return;
     try {
         for (const target of targets) restoreCodex(target);
-        vscode.window.showInformationMessage('Codex files restored. Reload Cursor to finish.');
+        vscode.window.showInformationMessage(`Codex files restored. Reload ${hostName()} to finish.`);
     } catch (err) {
         actionError(err, { op: 'codex_restore' });
         vscode.window.showErrorMessage(`Could not restore Codex: ${err instanceof Error ? err.message : String(err)}`);
@@ -525,7 +535,13 @@ export function activate(context: vscode.ExtensionContext): void {
     context.subscriptions.push(statusBarItem);
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('cursorRtl.quickPick', showQuickPick)
+        vscode.commands.registerCommand('cursorRtl.quickPick', () => showQuickPick(context))
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('cursorRtl.checkUpdates', () =>
+            runUpdateCheck(context)
+        )
     );
 
     context.subscriptions.push(
@@ -565,7 +581,7 @@ export function activate(context: vscode.ExtensionContext): void {
         vscode.commands.registerCommand('rtlHebrew.codexStatus', () => {
             const targets = findCodexTargets();
             if (targets.length === 0) {
-                vscode.window.showInformationMessage('RTL Hebrew: Codex is not installed or its webview bundle was not found.');
+                vscode.window.showInformationMessage('YB RTL: Codex is not installed or its webview bundle was not found.');
                 return;
             }
             const summary = targets.map((target) => `${target.name}: ${target.patched ? 'RTL ON' : 'RTL OFF'}${target.backup ? ' (backup available)' : ''}`).join('\n');
