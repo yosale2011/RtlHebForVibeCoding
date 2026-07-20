@@ -1,22 +1,36 @@
-// Dump message-sized RTL elements from the Devin workbench report in visual
-// order (by rect.y), including ones that DID get dir=rtl — hunting the user
-// message bubble from the screenshot.
+// Dump every list-related element in the Devin report: tag, dir, classes,
+// ancestors — to see why list markers render on the wrong side.
 const fs = require('fs');
 const path = require('path');
 
 const report = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'devin-dom.json'), 'utf8'));
-const win = report.windows[0]; // Devin workbench
-const els = (win.rtlElements || [])
-    .filter((el) => el.textLength >= 40 && el.textLength <= 600 && el.childElementCount <= 6)
-    .sort((a, b) => a.rect.y - b.rect.y);
-
 const out = [];
-for (const el of els) {
-    const cls = (el.className || '').split(' ').slice(0, 6).join(' ');
-    const anc = (el.ancestors || []).slice(0, 4).map((a) => `${a.tag.toLowerCase()}.${(a.className || '').split(' ').slice(0, 3).join('.')}`).join(' < ');
-    out.push(`y=${el.rect.y} x=${el.rect.x} w=${el.rect.width} dir=${el.dir || 'none'} ${el.tag}.${cls}`);
-    out.push(`   align=${el.computed.textAlign} dir-css=${el.computed.direction} kids=${el.childElementCount} len=${el.textLength}`);
-    out.push(`   <- ${anc}`);
+
+for (const win of report.windows) {
+    const url = (win.url || '').slice(0, 90);
+    const lists = (win.structuralElements || []);
+    const rtl = (win.rtlElements || []).filter((el) => /^(UL|OL|LI|P|H1|H2|H3|TABLE|DIV|SPAN)$/.test(el.tag));
+    out.push(`\n=== ${url} | structural: ${lists.length} | rtl: ${(win.rtlElements || []).length} ===`);
+
+    const seen = new Set();
+    const rows = [];
+    for (const el of [...lists, ...rtl]) {
+        const key = el.tag + '|' + el.className + '|' + el.rect.x + ',' + el.rect.y;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        rows.push(el);
+    }
+    // Visible viewport only — scrolled-away (negative y) rows are noise.
+    const visible = rows.filter((el) => el.rect.y >= -50 && el.rect.y <= 1000);
+    visible.sort((a, b) => a.rect.y - b.rect.y || a.rect.x - b.rect.x);
+
+    for (const el of visible.slice(0, 120)) {
+        const cls = (el.className || '').split(' ').slice(0, 5).join(' ');
+        const anc = (el.ancestors || []).slice(0, 3).map((a) => `${a.tag.toLowerCase()}.${(a.className || '').split(' ').slice(0, 2).join('.')}${a.dir ? '[dir=' + a.dir + ']' : ''}`).join(' < ');
+        out.push(`${el.tag.padEnd(6)} dir=${(el.dir || 'none').padEnd(4)} list-style=${el.computed.listStyleType}/${el.computed.listStylePosition} disp=${el.computed.display} y=${el.rect.y} len=${el.textLength} .${cls}`);
+        out.push(`       <- ${anc}`);
+    }
 }
+
 fs.writeFileSync(path.join(__dirname, 'devin-analysis.txt'), out.join('\n'));
-console.log(els.length, 'elements ->', 'scripts/devin-analysis.txt');
+console.log('written scripts/devin-analysis.txt,', out.length, 'lines');

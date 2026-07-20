@@ -56,6 +56,13 @@ test('runtime includes generic Devin chat selectors and protects code surfaces',
     assert.match(runtime, /monaco-diff-editor/);
     assert.match(runtime, /terminal/);
     assert.match(runtime, /unicode-bidi: isolate !important/);
+        // Devin/Cascade chat list items render their text inside an INLINE <p>
+        // (a bidi isolate island). With unicode-bidi:plaintext on the li, the
+        // island contributes no strong character, the item's line direction
+        // collapses to LTR, and the text anchors left while the marker (which
+        // follows the dir attribute) stays right. Explicit dir must win.
+    assert.match(runtime, /\.chat-client-root li\[dir="rtl"\]/);
+    assert.match(runtime, /\.chat-client-root li\[dir="ltr"\]/);
 });
 
 test('Devin webview uses a minimal layout-safe runtime', () => {

@@ -58,6 +58,18 @@
             text-align: start !important;
         }
 
+        /* Once rtl.js sets dir on a chat list item, that decision must win.
+           plaintext ignores the dir attribute and derives the line direction
+           from the first strong character — but Devin/Cascade renders item
+           text inside an INLINE <p> (a bidi isolate island), which contributes
+           no strong character, so the item collapses to LTR: text anchors to
+           the left edge while the marker (which follows the dir attribute)
+           stays on the right, far away from the text. isolate lets dir decide. */
+        .chat-client-root li[dir="rtl"],
+        .chat-client-root li[dir="ltr"] {
+            unicode-bidi: isolate !important;
+        }
+
         .composer-rendered-message .composer-human-message div:has(> div > .aislash-editor-input-readonly),
         .composer-rendered-message .composer-human-message div:has(> div > .aislash-editor-input) {
             flex-grow: 1 !important;

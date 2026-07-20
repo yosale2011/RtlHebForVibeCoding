@@ -1,273 +1,442 @@
-y=-17213 x=1760 w=518 dir=rtl P.!mb-0 mt-0
-   align=start dir-css=rtl kids=4 len=45
-   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
-y=-17176 x=1760 w=518 dir=rtl H2.
-   align=start dir-css=rtl kids=2 len=43
-   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
-y=-17176 x=1964 w=300 dir=none STRONG.
-   align=start dir-css=rtl kids=0 len=40
-   <- h2. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
-y=-17151 x=1760 w=518 dir=rtl P.!mb-0 mt-0
-   align=start dir-css=rtl kids=3 len=46
-   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
-y=-17121 x=1760 w=518 dir=none PRE.no-fadeIn
-   align=left dir-css=ltr kids=1 len=469
-   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
-y=-17121 x=1760 w=518 dir=none DIV.group/card relative flex flex-col rounded-[10px] border
-   align=left dir-css=ltr kids=1 len=469
-   <- pre.no-fadeIn < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
-y=-17120 x=1760 w=517 dir=none DIV.relative flex flex-col overflow-hidden rounded-[9px]
-   align=left dir-css=ltr kids=3 len=469
-   <- div.group/card.relative.flex < pre.no-fadeIn < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow
-y=-17082 x=1760 w=517 dir=none DIV.
-   align=left dir-css=ltr kids=1 len=463
-   <- div.relative.flex.flex-col < div.group/card.relative.flex < pre.no-fadeIn < div.prose.prose-sm.max-w-none
-y=-17082 x=1760 w=517 dir=none DIV.language-csharp relative overflow-hidden font-mono text-xs
-   align=left dir-css=ltr kids=1 len=463
-   <- div. < div.relative.flex.flex-col < div.group/card.relative.flex < pre.no-fadeIn
-y=-17082 x=1760 w=517 dir=none PRE.
-   align=left dir-css=ltr kids=1 len=463
-   <- div.language-csharp.relative.overflow-hidden < div. < div.relative.flex.flex-col < div.group/card.relative.flex
-y=-17082 x=1760 w=517 dir=none DIV.group/hscroll relative flex min-w-0 flex-1 flex-col
-   align=left dir-css=ltr kids=2 len=463
-   <- pre. < div.language-csharp.relative.overflow-hidden < div. < div.relative.flex.flex-col
-y=-17082 x=1760 w=517 dir=none DIV.min-w-0 flex-1
-   align=left dir-css=ltr kids=1 len=463
-   <- div.group/hscroll.relative.flex < pre. < div.language-csharp.relative.overflow-hidden < div.
-y=-17082 x=1760 w=664 dir=none DIV.min-w-fit p-[1em]
-   align=left dir-css=ltr kids=1 len=463
-   <- div.min-w-0.flex-1 < div.group/hscroll.relative.flex < pre. < div.language-csharp.relative.overflow-hidden
-y=-17071 x=1771 w=642 dir=none DIV.
-   align=left dir-css=ltr kids=1 len=463
-   <- div.min-w-fit.p-[1em] < div.min-w-0.flex-1 < div.group/hscroll.relative.flex < pre.
-y=-16979 x=1771 w=642 dir=none DIV.
-   align=left dir-css=ltr kids=3 len=62
-   <- div.monaco-tokenized-source < div. < div.min-w-fit.p-[1em] < div.min-w-0.flex-1
-y=-16976 x=1808 w=362 dir=none SPAN.mtk3
-   align=left dir-css=ltr kids=0 len=56
-   <- div. < div.monaco-tokenized-source < div. < div.min-w-fit.p-[1em]
-y=-16519 x=1760 w=518 dir=rtl UL.
-   align=start dir-css=rtl kids=2 len=146
-   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
-y=-16519 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
-   align=start dir-css=rtl kids=1 len=48
-   <- ul. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
-y=-16494 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
-   align=start dir-css=rtl kids=1 len=95
-   <- ul. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
-y=-16418 x=1760 w=518 dir=rtl OL.
-   align=start dir-css=rtl kids=2 len=129
-   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
-y=-16418 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
-   align=start dir-css=rtl kids=1 len=76
-   <- ol. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
-y=-16393 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
-   align=start dir-css=rtl kids=1 len=50
-   <- ol. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
-y=-16391 x=1760 w=295 dir=rtl P.!mb-0 mt-0
-   align=start dir-css=rtl kids=5 len=50
-   <- li.leading-[1.5].[&>p]:inline < ol. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow
-y=-16293 x=1760 w=518 dir=none DIV.first:mt-0 mt-4
-   align=start dir-css=ltr kids=1 len=96
-   <- div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20 < div.cascade-scrollbar.flex.w-full
-y=-16293 x=1760 w=518 dir=none DIV.flex w-full flex-row transition-opacity duration-300 opacity-100
-   align=start dir-css=ltr kids=1 len=96
-   <- div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20
-y=-16293 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col
-   align=start dir-css=ltr kids=1 len=96
-   <- div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4
-y=-16293 x=1760 w=518 dir=none DIV.group relative after:absolute after:block after:h-[calc(100cqh-1px)] after:w-full
-   align=start dir-css=ltr kids=1 len=96
-   <- div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col
-y=-16293 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col items-stretch
-   align=start dir-css=ltr kids=1 len=96
-   <- div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4
-y=-16293 x=1760 w=518 dir=none DIV.group/message-wrapper relative flex flex-col gap-1.5 ml-auto
-   align=start dir-css=ltr kids=1 len=96
-   <- div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row
-y=-16293 x=1760 w=518 dir=none DIV.relative
-   align=start dir-css=ltr kids=2 len=96
-   <- div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow
-y=-16293 x=1760 w=518 dir=none DIV.relative w-full min-w-0 flex-1 [overflow-wrap:anywhere] [&_*]:max-w-full
-   align=start dir-css=ltr kids=1 len=96
-   <- div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute
-y=-16293 x=1760 w=518 dir=none DIV.flex w-full flex-col gap-1 p-3
-   align=start dir-css=ltr kids=1 len=96
-   <- div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow
-y=-16281 x=1772 w=494 dir=none DIV.group/collapsible relative overflow-hidden
-   align=start dir-css=ltr kids=1 len=96
-   <- div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex
-y=-16281 x=1772 w=494 dir=none DIV.
-   align=start dir-css=ltr kids=1 len=96
-   <- div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative
-y=-16281 x=1772 w=494 dir=none DIV.z-1 whitespace-pre-wrap [overflow-wrap:anywhere]
-   align=start dir-css=ltr kids=3 len=96
-   <- div. < div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0
-y=-16176 x=1760 w=518 dir=none DIV.root-fadeIn relative flex flex-row transition-opacity duration-300
-   align=start dir-css=ltr kids=1 len=500
-   <- div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col < div.flex.flex-col.px-4
-y=-16176 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col gap-1
-   align=start dir-css=ltr kids=2 len=500
-   <- div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col
-y=-16144 x=1760 w=518 dir=none DIV.mt-3
-   align=start dir-css=ltr kids=1 len=486
-   <- div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group
-y=-16144 x=1760 w=518 dir=none DIV.flex w-full flex-row items-end
-   align=start dir-css=ltr kids=1 len=486
-   <- div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5
-y=-16144 x=1760 w=518 dir=none DIV.flex min-w-0 grow flex-col gap-1
-   align=start dir-css=ltr kids=1 len=486
-   <- div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex
-y=-16144 x=1760 w=518 dir=none DIV.prose prose-sm max-w-none break-words text-13 prose-headings:mb-1
-   align=start dir-css=ltr kids=4 len=486
-   <- div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow
-y=-16115 x=1760 w=518 dir=none DIV.bg-bg-elevated border-border-secondary light:bg-clip-padding @container relative w-full
-   align=start dir-css=ltr kids=1 len=252
-   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
-y=-16114 x=1760 w=517 dir=none DIV.relative overflow-hidden
-   align=start dir-css=ltr kids=1 len=252
-   <- div.bg-bg-elevated.border-border-secondary.light:bg-clip-padding < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
-y=-16114 x=1760 w=517 dir=none DIV.focus-visible:outline-bg-accent-primary size-full rounded-[inherit] outline-none transition-[color,box-shadow] focus-visible:outline
-   align=start dir-css=ltr kids=1 len=252
-   <- div.relative.overflow-hidden < div.bg-bg-elevated.border-border-secondary.light:bg-clip-padding < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow
-y=-16114 x=1760 w=517 dir=none TABLE.text-13 text-text-secondary w-full caption-bottom overflow-x-clip
-   align=start dir-css=ltr kids=2 len=252
-   <- div.focus-visible:outline-bg-accent-primary.size-full.rounded-[inherit] < div.relative.overflow-hidden < div.bg-bg-elevated.border-border-secondary.light:bg-clip-padding < div.prose.prose-sm.max-w-none
-y=-15616 x=1896 w=335 dir=none SPAN.
-   align=start dir-css=rtl kids=0 len=55
-   <- p.!mb-0.mt-0 < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
-y=-15597 x=1760 w=518 dir=rtl P.!mb-0 mt-0
-   align=start dir-css=rtl kids=2 len=45
-   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
-y=-15537 x=1760 w=518 dir=none DIV.root-fadeIn relative flex flex-row transition-opacity duration-300
-   align=start dir-css=ltr kids=1 len=99
-   <- div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col < div.flex.flex-col.px-4
-y=-15537 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col gap-1
-   align=start dir-css=ltr kids=2 len=99
-   <- div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col
-y=-15505 x=1760 w=518 dir=none DIV.mt-3
-   align=start dir-css=ltr kids=1 len=84
-   <- div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group
-y=-15505 x=1760 w=518 dir=none DIV.flex w-full flex-row items-end
-   align=start dir-css=ltr kids=1 len=84
-   <- div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5
-y=-15505 x=1760 w=518 dir=none DIV.flex min-w-0 grow flex-col gap-1
-   align=start dir-css=ltr kids=1 len=84
-   <- div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex
-y=-15505 x=1760 w=518 dir=none DIV.prose prose-sm max-w-none break-words text-13 prose-headings:mb-1
-   align=start dir-css=ltr kids=1 len=84
-   <- div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow
-y=-15410 x=1760 w=518 dir=none DIV.first:mt-0 mt-4
-   align=start dir-css=ltr kids=1 len=100
-   <- div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20 < div.cascade-scrollbar.flex.w-full
-y=-15410 x=1760 w=518 dir=none DIV.flex w-full flex-row transition-opacity duration-300 opacity-100
-   align=start dir-css=ltr kids=1 len=100
-   <- div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20
-y=-15410 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col
-   align=start dir-css=ltr kids=1 len=100
-   <- div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4
-y=-15410 x=1760 w=518 dir=none DIV.group relative after:absolute after:block after:h-[calc(100cqh-1px)] after:w-full
-   align=start dir-css=ltr kids=1 len=100
-   <- div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col
-y=-15410 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col items-stretch
-   align=start dir-css=ltr kids=1 len=100
-   <- div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4
-y=-15410 x=1760 w=518 dir=none DIV.group/message-wrapper relative flex flex-col gap-1.5 ml-auto
-   align=start dir-css=ltr kids=1 len=100
-   <- div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row
-y=-15410 x=1760 w=518 dir=none DIV.relative
-   align=start dir-css=ltr kids=2 len=100
-   <- div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow
-y=-15410 x=1760 w=518 dir=none DIV.relative w-full min-w-0 flex-1 [overflow-wrap:anywhere] [&_*]:max-w-full
-   align=start dir-css=ltr kids=1 len=100
-   <- div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute
-y=-15410 x=1760 w=518 dir=none DIV.flex w-full flex-col gap-1 p-3
-   align=start dir-css=ltr kids=1 len=100
-   <- div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow
-y=-15398 x=1772 w=494 dir=none DIV.group/collapsible relative overflow-hidden
-   align=start dir-css=ltr kids=1 len=100
-   <- div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex
-y=-15398 x=1772 w=494 dir=none DIV.
-   align=start dir-css=ltr kids=1 len=100
-   <- div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative
-y=-15398 x=1772 w=494 dir=none DIV.z-1 whitespace-pre-wrap [overflow-wrap:anywhere]
-   align=start dir-css=ltr kids=3 len=100
-   <- div. < div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0
-y=-15398 x=1772 w=466 dir=none SPAN.
-   align=start dir-css=ltr kids=0 len=84
-   <- div.z-1.whitespace-pre-wrap.[overflow-wrap:anywhere] < div. < div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col
-y=-15272 x=1760 w=518 dir=none DIV.root-fadeIn relative flex flex-row transition-opacity duration-300
-   align=start dir-css=ltr kids=1 len=93
-   <- div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col < div.flex.flex-col.px-4
-y=-15272 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col gap-1
-   align=start dir-css=ltr kids=2 len=93
-   <- div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group < div.flex.flex-col
-y=-15240 x=1760 w=518 dir=none DIV.mt-3
-   align=start dir-css=ltr kids=1 len=79
-   <- div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5 < div.first:mt-0.mt-4.event-group
-y=-15240 x=1760 w=518 dir=none DIV.flex w-full flex-row items-end
-   align=start dir-css=ltr kids=1 len=79
-   <- div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex < div.flex.flex-col.gap-1.5
-y=-15240 x=1760 w=518 dir=none DIV.flex min-w-0 grow flex-col gap-1
-   align=start dir-css=ltr kids=1 len=79
-   <- div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow < div.root-fadeIn.relative.flex
-y=-15240 x=1760 w=518 dir=none DIV.prose prose-sm max-w-none break-words text-13 prose-headings:mb-1
-   align=start dir-css=ltr kids=1 len=79
-   <- div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3 < div.flex.min-w-0.flex-grow
-y=-14883 x=1760 w=518 dir=rtl UL.
-   align=start dir-css=rtl kids=3 len=154
-   <- div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row < div.mt-3
-y=-14883 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
-   align=start dir-css=rtl kids=1 len=50
-   <- ul. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
-y=-14859 x=1760 w=498 dir=rtl LI.leading-[1.5] [&>p]:inline
-   align=start dir-css=rtl kids=1 len=74
-   <- ul. < div.prose.prose-sm.max-w-none < div.flex.min-w-0.grow < div.flex.w-full.flex-row
-y=-14668 x=1760 w=518 dir=none DIV.first:mt-0 mt-4
-   align=start dir-css=ltr kids=1 len=69
-   <- div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20 < div.cascade-scrollbar.flex.w-full
-y=-14668 x=1760 w=518 dir=none DIV.flex w-full flex-row transition-opacity duration-300 opacity-100
-   align=start dir-css=ltr kids=1 len=69
-   <- div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4 < div.pb-20
-y=-14668 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col
-   align=start dir-css=ltr kids=1 len=69
-   <- div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col < div.flex.flex-col.px-4
-y=-14668 x=1760 w=518 dir=none DIV.group relative after:absolute after:block after:h-[calc(100cqh-1px)] after:w-full
-   align=start dir-css=ltr kids=1 len=69
-   <- div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4 < div.flex.flex-col
-y=-14668 x=1760 w=518 dir=none DIV.flex min-w-0 flex-grow flex-col items-stretch
-   align=start dir-css=ltr kids=1 len=69
-   <- div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row < div.first:mt-0.mt-4
-y=-14668 x=1828 w=449 dir=none DIV.group/message-wrapper relative flex flex-col gap-1.5 ml-auto
-   align=start dir-css=ltr kids=1 len=69
-   <- div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow < div.flex.w-full.flex-row
-y=-14668 x=1828 w=449 dir=none DIV.relative
-   align=start dir-css=ltr kids=2 len=69
-   <- div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute < div.flex.min-w-0.flex-grow
-y=-14668 x=1828 w=449 dir=none DIV.relative w-full min-w-0 flex-1 [overflow-wrap:anywhere] [&_*]:max-w-full
-   align=start dir-css=ltr kids=1 len=69
-   <- div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow < div.group.relative.after:absolute
-y=-14668 x=1828 w=449 dir=none DIV.flex w-full flex-col gap-1 p-3
-   align=start dir-css=ltr kids=1 len=69
-   <- div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex < div.flex.min-w-0.flex-grow
-y=-14656 x=1840 w=425 dir=none DIV.group/collapsible relative overflow-hidden
-   align=start dir-css=ltr kids=1 len=69
-   <- div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative < div.group/message-wrapper.relative.flex
-y=-14656 x=1840 w=425 dir=none DIV.
-   align=start dir-css=ltr kids=1 len=69
-   <- div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0 < div.relative
-y=-14656 x=1840 w=425 dir=none DIV.z-1 whitespace-pre-wrap [overflow-wrap:anywhere]
-   align=start dir-css=ltr kids=1 len=69
-   <- div. < div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col < div.relative.w-full.min-w-0
-y=-14656 x=1840 w=425 dir=none SPAN.
-   align=start dir-css=ltr kids=0 len=69
-   <- div.z-1.whitespace-pre-wrap.[overflow-wrap:anywhere] < div. < div.group/collapsible.relative.overflow-hidden < div.flex.w-full.flex-col
-y=0 x=532 w=1762 dir=none DIV.split-view-view visible
-   align=start dir-css=ltr kids=1 len=113
-   <- div.split-view-container < div.monaco-scrollable-element. < div.monaco-split-view2.vertical < div.monaco-grid-branch-node
-y=0 x=532 w=1762 dir=none DIV.part titlebar inactive
-   align=start dir-css=ltr kids=1 len=113
-   <- div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element. < div.monaco-split-view2.vertical
-y=0 x=532 w=1762 dir=none DIV.titlebar-container has-center
-   align=start dir-css=ltr kids=4 len=113
-   <- div.part.titlebar.inactive < div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element.
+
+=== vscode-file://vscode-app/c:/Users/NoName11/AppData/Local/Programs/Devin/resources/app/out/ | structural: 89 | rtl: 500 ===
+UL     dir=rtl  list-style=disc/outside disp=flex y=-48 len=128 .
+       <- div.prose.prose-sm < div.flex.min-w-0 < div.flex.w-full
+LI     dir=rtl  list-style=disc/outside disp=list-item y=-48 len=61 .leading-[1.5] [&>p]:inline
+       <- ul.[dir=rtl] < div.prose.prose-sm < div.flex.min-w-0
+LI     dir=rtl  list-style=disc/outside disp=list-item y=-22 len=64 .leading-[1.5] [&>p]:inline
+       <- ul.[dir=rtl] < div.prose.prose-sm < div.flex.min-w-0
+DIV    dir=none list-style=disc/outside disp=block y=0 len=48977 .file-icons-enabled monaco-enable-motion monaco-workbench windows chromium
+       <- body. < html.
+DIV    dir=none list-style=disc/outside disp=block y=0 len=13429 .monaco-grid-view
+       <- div.file-icons-enabled.monaco-enable-motion < body. < html.
+DIV    dir=none list-style=disc/outside disp=block y=0 len=13429 .monaco-grid-branch-node
+       <- div.monaco-grid-view < div.file-icons-enabled.monaco-enable-motion < body.
+DIV    dir=none list-style=disc/outside disp=block y=0 len=13429 .monaco-split-view2 vertical
+       <- div.monaco-grid-branch-node < div.monaco-grid-view < div.file-icons-enabled.monaco-enable-motion
+DIV    dir=none list-style=disc/outside disp=block y=0 len=13429 .monaco-scrollable-element 
+       <- div.monaco-split-view2.vertical < div.monaco-grid-branch-node < div.monaco-grid-view
+DIV    dir=none list-style=disc/outside disp=block y=0 len=13429 .split-view-container
+       <- div.monaco-scrollable-element. < div.monaco-split-view2.vertical < div.monaco-grid-branch-node
+DIV    dir=none list-style=disc/outside disp=block y=0 len=12788 .split-view-view visible
+       <- div.split-view-container < div.monaco-scrollable-element. < div.monaco-split-view2.vertical
+DIV    dir=none list-style=disc/outside disp=block y=0 len=12788 .monaco-split-view2 horizontal
+       <- div.monaco-grid-branch-node < div.split-view-view.visible < div.split-view-container
+DIV    dir=none list-style=disc/outside disp=block y=0 len=4571 .split-view-view visible
+       <- div.split-view-container < div.monaco-scrollable-element. < div.monaco-split-view2.horizontal
+DIV    dir=none list-style=disc/outside disp=block y=0 len=4571 .monaco-grid-branch-node
+       <- div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element.
+DIV    dir=none list-style=disc/outside disp=block y=0 len=4571 .monaco-split-view2 vertical
+       <- div.monaco-grid-branch-node < div.split-view-view.visible < div.split-view-container
+DIV    dir=none list-style=disc/outside disp=block y=0 len=4571 .monaco-scrollable-element 
+       <- div.monaco-split-view2.vertical < div.monaco-grid-branch-node < div.split-view-view.visible
+DIV    dir=none list-style=disc/outside disp=block y=0 len=4571 .split-view-container
+       <- div.monaco-scrollable-element. < div.monaco-split-view2.vertical < div.monaco-grid-branch-node
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=132 .part titlebar inactive
+       <- div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element.
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=132 .titlebar-container has-center
+       <- div.part.titlebar < div.split-view-view.visible < div.split-view-container
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=35 .titlebar-right
+       <- div.titlebar-container.has-center < div.part.titlebar < div.split-view-view.visible
+UL     dir=ltr  list-style=disc/outside disp=flex y=0 len=2 .actions-container
+       <- div.monaco-action-bar < div.monaco-toolbar < div.action-toolbar-container
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=2 .action-toolbar-container
+       <- div.titlebar-right < div.titlebar-container.has-center < div.part.titlebar
+DIV    dir=none list-style=disc/outside disp=block y=0 len=2 .monaco-toolbar
+       <- div.action-toolbar-container < div.titlebar-right < div.titlebar-container.has-center
+DIV    dir=none list-style=disc/outside disp=block y=0 len=2 .monaco-action-bar
+       <- div.monaco-toolbar < div.action-toolbar-container < div.titlebar-right
+UL     dir=ltr  list-style=disc/outside disp=flex y=5 len=48 .actions-container
+       <- div.monaco-action-bar < div.monaco-toolbar < div.command-center
+LI     dir=none list-style=disc/outside disp=flex y=5 len=48 .action-item command-center-center
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+UL     dir=ltr  list-style=circle/outside disp=flex y=5 len=48 .actions-container
+       <- div.monaco-action-bar < div.monaco-toolbar < li.action-item.command-center-center
+LI     dir=none list-style=disc/outside disp=flex y=5 len=2 .action-item icon windsurf-profile
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=6 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=6 len=0 .action-item disabled menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=6 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=flex y=6 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=flex y=6 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+DIV    dir=none list-style=disc/outside disp=flex y=7 len=2 .titlebar-avatar
+       <- li.action-item.icon < ul.actions-container[dir=ltr] < div.monaco-action-bar
+DIV    dir=none list-style=disc/outside disp=flex y=7 len=2 .titlebar-activity-initials
+       <- div.titlebar-avatar < li.action-item.icon < ul.actions-container[dir=ltr]
+LI     dir=none list-style=circle/outside disp=flex y=8 len=48 .action-item command-center-quick-pick
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+UL     dir=none list-style=disc/outside disp=flex y=35 len=0 .actions-container
+       <- div.monaco-action-bar.vertical < div.composite-bar < div.content
+LI     dir=none list-style=disc/outside disp=block y=35 len=0 .action-item icon checked
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+UL     dir=ltr  list-style=disc/outside disp=flex y=35 len=0 .actions-container
+       <- div.monaco-action-bar.has-overflow < div.monaco-toolbar < div.title-actions
+UL     dir=ltr  list-style=disc/outside disp=flex y=35 len=0 .actions-container highlight-toggled
+       <- div.monaco-action-bar.has-overflow < div.monaco-toolbar < div.editor-actions
+DIV    dir=none list-style=disc/outside disp=block y=35 len=12807 .
+       <- div.file-icons-enabled.monaco-enable-motion < body. < html.
+DIV    dir=none list-style=disc/outside disp=block y=35 len=12807 .chat-client-root dark
+       <- div. < div.file-icons-enabled.monaco-enable-motion < body.
+DIV    dir=none list-style=disc/outside disp=flex y=35 len=12807 .flex h-full flex-col items-center justify-center
+       <- div.chat-client-root.dark < div. < div.file-icons-enabled.monaco-enable-motion
+DIV    dir=none list-style=disc/outside disp=flex y=35 len=12807 .relative flex h-full w-full flex-col
+       <- div.flex.h-full < div.chat-client-root.dark < div.
+DIV    dir=none list-style=disc/outside disp=flex y=35 len=12787 .relative flex h-full w-full flex-col
+       <- div.relative.flex < div.relative.flex < div.flex.h-full
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item menu-entry
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item menu-entry
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item menu-entry
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+UL     dir=none list-style=disc/outside disp=flex y=43 len=0 .actions-container
+       <- div.monaco-action-bar < div.tab-actions < div.tab.tab-actions-right
+LI     dir=none list-style=disc/outside disp=block y=43 len=0 .action-item
+       <- ul.actions-container < div.monaco-action-bar < div.tab-actions
+UL     dir=none list-style=disc/outside disp=flex y=43 len=0 .actions-container
+       <- div.monaco-action-bar < div.tab-actions < div.tab.tab-actions-right
+LI     dir=none list-style=disc/outside disp=block y=43 len=0 .action-item
+       <- ul.actions-container < div.monaco-action-bar < div.tab-actions
+DIV    dir=ltr  list-style=disc/outside disp=flex y=70 len=562 .monaco-breadcrumbs
+       <- div.monaco-scrollable-element. < div.breadcrumbs-control.backslash-path < div.breadcrumbs-below-tabs
+DIV    dir=none list-style=disc/outside disp=flex y=70 len=25 .file monaco-breadcrumb-item
+       <- div.monaco-breadcrumbs[dir=ltr] < div.monaco-scrollable-element. < div.breadcrumbs-control.backslash-path
+DIV    dir=none list-style=disc/outside disp=flex y=70 len=12753 .relative flex w-full grow flex-col
+       <- div.relative.flex < div.relative.flex < div.relative.flex
+DIV    dir=none list-style=disc/outside disp=flex y=70 len=12552 .relative flex w-full flex-grow flex-col
+       <- div.relative.flex < div.relative.flex < div.relative.flex
+DIV    dir=none list-style=disc/outside disp=flex y=70 len=12527 .cascade-scrollbar flex w-full flex-grow flex-col
+       <- div.relative.flex < div.relative.flex < div.relative.flex
+LI     dir=none list-style=disc/outside disp=block y=77 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=119 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=161 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=203 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=245 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+UL     dir=rtl  list-style=disc/outside disp=flex y=274 len=112 .
+       <- div.prose.prose-sm < div.flex.min-w-0 < div.flex.w-full
+LI     dir=rtl  list-style=disc/outside disp=list-item y=274 len=55 .leading-[1.5] [&>p]:inline
+       <- ul.[dir=rtl] < div.prose.prose-sm < div.flex.min-w-0
+LI     dir=none list-style=disc/outside disp=block y=287 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=rtl  list-style=disc/outside disp=list-item y=300 len=54 .leading-[1.5] [&>p]:inline
+       <- ul.[dir=rtl] < div.prose.prose-sm < div.flex.min-w-0
+LI     dir=none list-style=disc/outside disp=block y=329 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=371 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=413 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=455 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+DIV    dir=none list-style=disc/outside disp=block y=778 len=5379 .monaco-list list_id_4 mouse-support selection-none
+       <- div.notifications-list-container < div.notification-toast.notification-fade-in-done < div.notification-toast-container
+LI     dir=none list-style=disc/outside disp=block y=788 len=0 .action-item
+       <- ul.actions-container < div.monaco-action-bar < div.notification-list-item-toolbar-container
+LI     dir=none list-style=disc/outside disp=block y=788 len=0 .action-item
+       <- ul.actions-container < div.monaco-action-bar < div.notification-list-item-toolbar-container
+UL     dir=none list-style=disc/outside disp=flex y=790 len=0 .actions-container
+       <- div.monaco-action-bar < div.notification-list-item-toolbar-container < div.notification-list-item-main-row
+
+=== vscode-file://vscode-app/c:/Users/NoName11/AppData/Local/Programs/Devin/resources/app/out/ | structural: 130 | rtl: 500 ===
+DIV    dir=none list-style=disc/outside disp=block y=0 len=189233 .file-icons-enabled monaco-enable-motion monaco-workbench windows chromium
+       <- body. < html.
+DIV    dir=none list-style=disc/outside disp=block y=0 len=24761 .monaco-grid-view
+       <- div.file-icons-enabled.monaco-enable-motion < body. < html.
+DIV    dir=none list-style=disc/outside disp=block y=0 len=24761 .monaco-grid-branch-node
+       <- div.monaco-grid-view < div.file-icons-enabled.monaco-enable-motion < body.
+DIV    dir=none list-style=disc/outside disp=block y=0 len=24761 .monaco-split-view2 vertical
+       <- div.monaco-grid-branch-node < div.monaco-grid-view < div.file-icons-enabled.monaco-enable-motion
+DIV    dir=none list-style=disc/outside disp=block y=0 len=24761 .monaco-scrollable-element 
+       <- div.monaco-split-view2.vertical < div.monaco-grid-branch-node < div.monaco-grid-view
+DIV    dir=none list-style=disc/outside disp=block y=0 len=24761 .split-view-container
+       <- div.monaco-scrollable-element. < div.monaco-split-view2.vertical < div.monaco-grid-branch-node
+DIV    dir=none list-style=disc/outside disp=block y=0 len=24135 .split-view-view visible
+       <- div.split-view-container < div.monaco-scrollable-element. < div.monaco-split-view2.vertical
+DIV    dir=none list-style=disc/outside disp=block y=0 len=24135 .monaco-split-view2 horizontal
+       <- div.monaco-grid-branch-node < div.split-view-view.visible < div.split-view-container
+DIV    dir=none list-style=disc/outside disp=block y=0 len=7246 .split-view-view visible
+       <- div.split-view-container < div.monaco-scrollable-element. < div.monaco-split-view2.horizontal
+DIV    dir=none list-style=disc/outside disp=block y=0 len=7246 .monaco-grid-branch-node
+       <- div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element.
+DIV    dir=none list-style=disc/outside disp=block y=0 len=7246 .monaco-split-view2 vertical
+       <- div.monaco-grid-branch-node < div.split-view-view.visible < div.split-view-container
+DIV    dir=none list-style=disc/outside disp=block y=0 len=7246 .monaco-scrollable-element 
+       <- div.monaco-split-view2.vertical < div.monaco-grid-branch-node < div.split-view-view.visible
+DIV    dir=none list-style=disc/outside disp=block y=0 len=7246 .split-view-container
+       <- div.monaco-scrollable-element. < div.monaco-split-view2.vertical < div.monaco-grid-branch-node
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=115 .part titlebar inactive
+       <- div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element.
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=115 .titlebar-container has-center
+       <- div.part.titlebar < div.split-view-view.visible < div.split-view-container
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=31 .titlebar-center
+       <- div.titlebar-container.has-center < div.part.titlebar < div.split-view-view.visible
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=35 .titlebar-right
+       <- div.titlebar-container.has-center < div.part.titlebar < div.split-view-view.visible
+UL     dir=ltr  list-style=disc/outside disp=flex y=0 len=2 .actions-container
+       <- div.monaco-action-bar < div.monaco-toolbar < div.action-toolbar-container
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=2 .action-toolbar-container
+       <- div.titlebar-right < div.titlebar-container.has-center < div.part.titlebar
+DIV    dir=none list-style=disc/outside disp=block y=0 len=2 .monaco-toolbar
+       <- div.action-toolbar-container < div.titlebar-right < div.titlebar-container.has-center
+DIV    dir=none list-style=disc/outside disp=block y=0 len=2 .monaco-action-bar
+       <- div.monaco-toolbar < div.action-toolbar-container < div.titlebar-right
+UL     dir=ltr  list-style=disc/outside disp=flex y=5 len=31 .actions-container
+       <- div.monaco-action-bar < div.monaco-toolbar < div.command-center
+DIV    dir=none list-style=disc/outside disp=block y=5 len=31 .window-title
+       <- div.titlebar-center < div.titlebar-container.has-center < div.part.titlebar
+DIV    dir=none list-style=disc/outside disp=block y=5 len=31 .command-center
+       <- div.window-title < div.titlebar-center < div.titlebar-container.has-center
+DIV    dir=none list-style=disc/outside disp=block y=5 len=31 .monaco-toolbar
+       <- div.command-center < div.window-title < div.titlebar-center
+DIV    dir=none list-style=disc/outside disp=block y=5 len=31 .monaco-action-bar
+       <- div.monaco-toolbar < div.command-center < div.window-title
+LI     dir=none list-style=disc/outside disp=flex y=5 len=31 .action-item command-center-center
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+UL     dir=rtl  list-style=circle/outside disp=flex y=5 len=31 .actions-container
+       <- div.monaco-action-bar < div.monaco-toolbar < li.action-item.command-center-center
+DIV    dir=none list-style=disc/outside disp=block y=5 len=31 .monaco-toolbar
+       <- li.action-item.command-center-center < ul.actions-container[dir=ltr] < div.monaco-action-bar
+DIV    dir=none list-style=disc/outside disp=block y=5 len=31 .monaco-action-bar
+       <- div.monaco-toolbar < li.action-item.command-center-center < ul.actions-container[dir=ltr]
+LI     dir=none list-style=disc/outside disp=flex y=5 len=2 .action-item icon windsurf-profile
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=6 len=0 .action-item disabled menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=6 len=0 .action-item disabled menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=6 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=flex y=6 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=flex y=6 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+DIV    dir=none list-style=disc/outside disp=flex y=7 len=2 .titlebar-avatar
+       <- li.action-item.icon < ul.actions-container[dir=ltr] < div.monaco-action-bar
+DIV    dir=none list-style=disc/outside disp=flex y=7 len=2 .titlebar-activity-initials
+       <- div.titlebar-avatar < li.action-item.icon < ul.actions-container[dir=ltr]
+LI     dir=none list-style=circle/outside disp=flex y=8 len=31 .action-item command-center-quick-pick
+       <- ul.actions-container[dir=rtl] < div.monaco-action-bar < div.monaco-toolbar
+SPAN   dir=none list-style=circle/outside disp=block y=8 len=25 .search-label
+       <- li.action-item.command-center-quick-pick < ul.actions-container[dir=rtl] < div.monaco-action-bar
+UL     dir=none list-style=disc/outside disp=flex y=35 len=1 .actions-container
+       <- div.monaco-action-bar.vertical < div.composite-bar < div.content
+LI     dir=none list-style=disc/outside disp=block y=35 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+UL     dir=ltr  list-style=disc/outside disp=flex y=35 len=0 .actions-container
+       <- div.monaco-action-bar.has-overflow < div.monaco-toolbar < div.title-actions
+DIV    dir=none list-style=disc/outside disp=block y=35 len=7131 .split-view-view visible
+       <- div.split-view-container < div.monaco-scrollable-element. < div.monaco-split-view2.vertical
+DIV    dir=none list-style=disc/outside disp=block y=35 len=7131 .monaco-grid-branch-node
+       <- div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element.
+DIV    dir=none list-style=disc/outside disp=block y=35 len=7131 .monaco-split-view2 horizontal
+       <- div.monaco-grid-branch-node < div.split-view-view.visible < div.split-view-container
+DIV    dir=none list-style=disc/outside disp=block y=35 len=7131 .monaco-scrollable-element 
+       <- div.monaco-split-view2.horizontal < div.monaco-grid-branch-node < div.split-view-view.visible
+DIV    dir=none list-style=disc/outside disp=block y=35 len=7131 .split-view-container
+       <- div.monaco-scrollable-element. < div.monaco-split-view2.horizontal < div.monaco-grid-branch-node
+DIV    dir=none list-style=disc/outside disp=block y=35 len=7079 .monaco-split-view2 vertical
+       <- div.monaco-grid-branch-node < div.split-view-view.visible < div.split-view-container
+DIV    dir=none list-style=disc/outside disp=block y=35 len=563 .part editor
+       <- div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element.
+DIV    dir=none list-style=disc/outside disp=block y=35 len=563 .content
+       <- div.part.editor < div.split-view-view.visible < div.split-view-container
+DIV    dir=none list-style=disc/outside disp=block y=35 len=563 .grid-view-container
+       <- div.content < div.part.editor < div.split-view-view.visible
+DIV    dir=none list-style=disc/outside disp=block y=35 len=563 .monaco-grid-view
+       <- div.grid-view-container < div.content < div.part.editor
+DIV    dir=none list-style=disc/outside disp=block y=35 len=563 .monaco-split-view2 horizontal separator-border
+       <- div.monaco-grid-branch-node < div.monaco-grid-view < div.grid-view-container
+DIV    dir=none list-style=disc/outside disp=block y=35 len=563 .editor-group-container active locked
+       <- div.split-view-view.visible < div.split-view-container < div.monaco-scrollable-element.
+DIV    dir=none list-style=disc/outside disp=block y=35 len=550 .title tabs show-file-icons
+       <- div.editor-group-container.active < div.split-view-view.visible < div.split-view-container
+DIV    dir=none list-style=disc/outside disp=flex y=35 len=13 .tabs-and-actions-container tabs-border-bottom
+       <- div.title.tabs < div.editor-group-container.active < div.split-view-view.visible
+DIV    dir=none list-style=disc/outside disp=flex y=35 len=13 .tabs-container
+       <- div.monaco-scrollable-element. < div.tabs-and-actions-container.tabs-border-bottom < div.title.tabs
+DIV    dir=none list-style=disc/outside disp=flex y=35 len=13 .tab tab-actions-right sizing-fit has-icon active
+       <- div.tabs-container < div.monaco-scrollable-element. < div.tabs-and-actions-container.tabs-border-bottom
+DIV    dir=none list-style=disc/outside disp=flex y=35 len=13 .monaco-icon-label tab-label tab-label-has-badge
+       <- div.tab.tab-actions-right < div.tabs-container < div.monaco-scrollable-element.
+DIV    dir=none list-style=disc/outside disp=block y=35 len=13 .monaco-icon-label-container
+       <- div.monaco-icon-label.tab-label < div.tab.tab-actions-right < div.tabs-container
+UL     dir=ltr  list-style=disc/outside disp=flex y=35 len=0 .actions-container highlight-toggled
+       <- div.monaco-action-bar.has-overflow < div.monaco-toolbar < div.editor-actions
+DIV    dir=none list-style=disc/outside disp=block y=35 len=146717 .
+       <- div.file-icons-enabled.monaco-enable-motion < body. < html.
+DIV    dir=none list-style=disc/outside disp=block y=35 len=146717 .chat-client-root dark
+       <- div. < div.file-icons-enabled.monaco-enable-motion < body.
+DIV    dir=none list-style=disc/outside disp=flex y=35 len=146717 .flex h-full flex-col items-center justify-center
+       <- div.chat-client-root.dark < div. < div.file-icons-enabled.monaco-enable-motion
+DIV    dir=none list-style=disc/outside disp=flex y=35 len=146717 .relative flex h-full w-full flex-col
+       <- div.flex.h-full < div.chat-client-root.dark < div.
+DIV    dir=none list-style=disc/outside disp=flex y=35 len=146697 .relative flex h-full w-full flex-col
+       <- div.relative.flex < div.relative.flex < div.flex.h-full
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item menu-entry
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item menu-entry
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item menu-entry
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item menu-entry
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=42 len=0 .action-item
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+UL     dir=none list-style=disc/outside disp=flex y=43 len=0 .actions-container
+       <- div.monaco-action-bar < div.tab-actions < div.tab.tab-actions-right
+LI     dir=none list-style=disc/outside disp=block y=43 len=0 .action-item
+       <- ul.actions-container < div.monaco-action-bar < div.tab-actions
+SPAN   dir=none list-style=disc/outside disp=inline y=44 len=13 .monaco-icon-name-container
+       <- div.monaco-icon-label-container < div.monaco-icon-label.tab-label < div.tab.tab-actions-right
+DIV    dir=none list-style=disc/outside disp=flex y=70 len=146658 .relative flex w-full grow flex-col
+       <- div.relative.flex < div.relative.flex < div.relative.flex
+DIV    dir=none list-style=disc/outside disp=flex y=70 len=146471 .relative flex w-full flex-grow flex-col
+       <- div.relative.flex < div.relative.flex < div.relative.flex
+DIV    dir=none list-style=disc/outside disp=flex y=70 len=146446 .cascade-scrollbar flex w-full flex-grow flex-col
+       <- div.relative.flex < div.relative.flex < div.relative.flex
+LI     dir=none list-style=disc/outside disp=block y=77 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+UL     dir=none list-style=disc/outside disp=flex y=98 len=8 .actions-container
+       <- div.monaco-action-bar < div.monaco-toolbar < div.scm-editor-toolbar
+LI     dir=none list-style=disc/outside disp=block y=98 len=8 .action-item
+       <- ul.actions-container < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=119 len=0 .action-item icon checked
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=161 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=203 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=245 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=287 len=1 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=329 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=371 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=413 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+LI     dir=none list-style=disc/outside disp=block y=455 len=0 .action-item icon
+       <- ul.actions-container < div.monaco-action-bar.vertical < div.composite-bar
+UL     dir=ltr  list-style=disc/outside disp=flex y=499 len=4 .actions-container
+       <- div.monaco-action-bar.has-overflow < div.monaco-toolbar < div.actions.show-expanded
+LI     dir=none list-style=disc/outside disp=block y=499 len=4 .action-item
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=499 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=499 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=499 len=0 .action-item disabled menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=499 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=499 len=0 .action-item menu-entry
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=499 len=0 .action-item
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=flex y=639 len=8 .action-item
+       <- ul.actions-container < div.monaco-action-bar < div.composite-bar
+LI     dir=none list-style=disc/outside disp=flex y=639 len=6 .action-item
+       <- ul.actions-container < div.monaco-action-bar < div.composite-bar
+LI     dir=none list-style=disc/outside disp=flex y=639 len=13 .action-item
+       <- ul.actions-container < div.monaco-action-bar < div.composite-bar
+LI     dir=none list-style=disc/outside disp=flex y=639 len=8 .action-item checked
+       <- ul.actions-container < div.monaco-action-bar < div.composite-bar
+LI     dir=none list-style=disc/outside disp=flex y=639 len=5 .action-item
+       <- ul.actions-container < div.monaco-action-bar < div.composite-bar
+UL     dir=none list-style=disc/outside disp=flex y=640 len=40 .actions-container
+       <- div.monaco-action-bar < div.composite-bar < div.composite-bar-container
+UL     dir=ltr  list-style=disc/outside disp=flex y=640 len=0 .actions-container
+       <- div.monaco-action-bar.has-overflow < div.monaco-toolbar < div.title-actions
+UL     dir=ltr  list-style=disc/outside disp=flex y=640 len=0 .actions-container highlight-toggled
+       <- div.monaco-action-bar < div.monaco-toolbar < div.global-actions
+LI     dir=none list-style=disc/outside disp=block y=644 len=0 .action-item disabled
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=flex y=646 len=0 .action-item monaco-dropdown-with-primary
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=646 len=0 .action-item
+       <- ul.actions-container[dir=ltr] < div.monaco-action-bar.has-overflow < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=646 len=0 .action-item menu-entry
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+LI     dir=none list-style=disc/outside disp=block y=646 len=0 .action-item menu-entry
+       <- ul.actions-container.highlight-toggled[dir=ltr] < div.monaco-action-bar < div.monaco-toolbar
+DIV    dir=none list-style=disc/outside disp=block y=674 len=5163 .monaco-list list_id_1 mouse-support selection-single element-focused
+       <- div.tabs-list < div.tabs-list-container < div.tabs-container.has-text
+DIV    dir=none list-style=disc/outside disp=block y=674 len=5 .monaco-list-row
+       <- div.monaco-list-rows < div.monaco-scrollable-element. < div.monaco-list.list_id_1
+DIV    dir=none list-style=disc/outside disp=block y=696 len=8 .monaco-list-row focused selected
+       <- div.monaco-list-rows < div.monaco-scrollable-element. < div.monaco-list.list_id_1
+
+=== vscode-webview://0hvguul1qs0bpka6f4qs1jb8h3fd4nqkipgsnn2nasi3g1pum00b/index.html?id=8bd4f4 | structural: 0 | rtl: 0 ===
+
+=== vscode-webview://0hvguul1qs0bpka6f4qs1jb8h3fd4nqkipgsnn2nasi3g1pum00b/index.html?id=8bd4f4 | structural: 99 | rtl: 241 ===
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=93031 .
+       <- body.vscode-dark.enable-motion < html.
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=93031 .root_aqhumA 
+       <- div. < body.vscode-dark.enable-motion < html.
+DIV    dir=none list-style=disc/outside disp=flex y=0 len=13 .header_aqhumA
+       <- div.root_aqhumA. < div. < body.vscode-dark.enable-motion
+DIV    dir=none list-style=disc/outside disp=flex y=6 len=13 .titleGroup_aqhumA 
+       <- div.header_aqhumA < div.root_aqhumA. < div.
+SPAN   dir=rtl  list-style=disc/outside disp=block y=12 len=13 .titleTextInner_aqhumA
+       <- button.titleText_aqhumA < div.titleGroup_aqhumA. < div.header_aqhumA
+DIV    dir=none list-style=disc/outside disp=flex y=42 len=93018 .body_aqhumA
+       <- div.root_aqhumA. < div. < body.vscode-dark.enable-motion
+DIV    dir=none list-style=disc/outside disp=flex y=42 len=93018 .content_aqhumA
+       <- div.body_aqhumA < div.root_aqhumA. < div.
+DIV    dir=none list-style=disc/outside disp=flex y=42 len=93018 .sessionBody_aqhumA
+       <- div.content_aqhumA < div.body_aqhumA < div.root_aqhumA.
+DIV    dir=none list-style=disc/outside disp=flex y=42 len=93018 .chatContainer_07S1Yg
+       <- div.sessionBody_aqhumA < div.content_aqhumA < div.body_aqhumA
+DIV    dir=none list-style=disc/outside disp=flex y=42 len=92973 .messagesContainer_07S1Yg stickyMode_07S1Yg  
+       <- div.chatContainer_07S1Yg < div.sessionBody_aqhumA < div.content_aqhumA
+DIV    dir=none list-style=disc/outside disp=block y=42 len=59 .message_07S1Yg userMessageContainer_07S1Yg stickyHeader_07S1Yg  
+       <- div.turn_07S1Yg. < div.messagesContainer_07S1Yg.stickyMode_07S1Yg < div.chatContainer_07S1Yg
+DIV    dir=none list-style=disc/outside disp=block y=56 len=59 .userMessageContainer_07S1Yg
+       <- div.message_07S1Yg.userMessageContainer_07S1Yg < div.turn_07S1Yg. < div.messagesContainer_07S1Yg.stickyMode_07S1Yg
+DIV    dir=none list-style=disc/outside disp=block y=56 len=59 .userMessage_07S1Yg
+       <- div.userMessageContainer_07S1Yg < div.message_07S1Yg.userMessageContainer_07S1Yg < div.turn_07S1Yg.
+DIV    dir=none list-style=disc/outside disp=flex y=61 len=59 .expandableContainer_xGDvVg
+       <- div.userMessage_07S1Yg < div.userMessageContainer_07S1Yg < div.message_07S1Yg.userMessageContainer_07S1Yg
+DIV    dir=none list-style=disc/outside disp=block y=61 len=59 .contentWrapper_xGDvVg 
+       <- div.expandableContainer_xGDvVg < div.userMessage_07S1Yg < div.userMessageContainer_07S1Yg
+DIV    dir=rtl  list-style=disc/outside disp=block y=61 len=59 .content_xGDvVg 
+       <- div.contentWrapper_xGDvVg. < div.expandableContainer_xGDvVg < div.userMessage_07S1Yg
+SPAN   dir=none list-style=disc/outside disp=inline y=61 len=59 .
+       <- div.content_xGDvVg.[dir=rtl] < div.contentWrapper_xGDvVg. < div.expandableContainer_xGDvVg
+DIV    dir=none list-style=disc/outside disp=flex y=103 len=1318 .message_07S1Yg timelineMessage_07S1Yg  
+       <- div.turn_07S1Yg. < div.messagesContainer_07S1Yg.stickyMode_07S1Yg < div.chatContainer_07S1Yg
+SPAN   dir=none list-style=disc/outside disp=block y=111 len=1318 .root_-a7MRw
+       <- div.message_07S1Yg.timelineMessage_07S1Yg < div.turn_07S1Yg. < div.messagesContainer_07S1Yg.stickyMode_07S1Yg
+P      dir=rtl  list-style=disc/outside disp=block y=111 len=248 .
+       <- span.root_-a7MRw < div.message_07S1Yg.timelineMessage_07S1Yg < div.turn_07S1Yg.
+P      dir=rtl  list-style=disc/outside disp=block y=152 len=45 .
+       <- span.root_-a7MRw < div.message_07S1Yg.timelineMessage_07S1Yg < div.turn_07S1Yg.
+P      dir=rtl  list-style=disc/outside disp=block y=223 len=147 .
+       <- span.root_-a7MRw < div.message_07S1Yg.timelineMessage_07S1Yg < div.turn_07S1Yg.
+P      dir=rtl  list-style=disc/outside disp=block y=245 len=25 .
+       <- span.root_-a7MRw < div.message_07S1Yg.timelineMessage_07S1Yg < div.turn_07S1Yg.
+P      dir=rtl  list-style=disc/outside disp=block y=316 len=172 .
+       <- span.root_-a7MRw < div.message_07S1Yg.timelineMessage_07S1Yg < div.turn_07S1Yg.
+P      dir=rtl  list-style=disc/outside disp=block y=338 len=156 .
+       <- span.root_-a7MRw < div.message_07S1Yg.timelineMessage_07S1Yg < div.turn_07S1Yg.
+P      dir=rtl  list-style=disc/outside disp=block y=360 len=344 .
+       <- span.root_-a7MRw < div.message_07S1Yg.timelineMessage_07S1Yg < div.turn_07S1Yg.
+P      dir=rtl  list-style=disc/outside disp=block y=402 len=41 .
+       <- span.root_-a7MRw < div.message_07S1Yg.timelineMessage_07S1Yg < div.turn_07S1Yg.
