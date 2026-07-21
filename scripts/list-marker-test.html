@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font-family: sans-serif; background: #1e1e1e; color: #ddd; font-size: 14px; }
+  section { border: 1px solid #555; margin: 14px; padding: 10px; width: 760px; }
+  h3 { color: #7fd; margin: 4px 0; }
+
+  /* Devin's own layout (from DOM capture) */
+  .prose-sm ul { display: flex; flex-direction: column; gap: 4px;
+                 padding-inline-start: 20px; margin: 0; list-style: disc outside; }
+  .prose-sm li { display: list-item; line-height: 1.5; padding-inline-start: 5.57px; }
+  .prose-sm li > p { display: inline; margin: 0; }
+
+  /* === rtl.js ACTUAL injected rules (verbatim from resources/rtl.js) === */
+  .chat-client-root p,
+  .chat-client-root li {
+      unicode-bidi: plaintext !important;
+      text-align: start !important;
+  }
+  ul[dir="rtl"], ol[dir="rtl"] {
+      direction: rtl !important;
+      text-align: start !important;
+      padding-inline-start: 20px !important;
+      padding-inline-end: 0 !important;
+      list-style-position: outside !important;
+  }
+  p code, li code {
+      display: inline-block !important;
+      direction: ltr !important;
+      unicode-bidi: isolate !important;
+      text-align: left !important;
+  }
+</style>
+</head>
+<body class="chat-client-root">
+
+<section>
+  <h3>E) FULL rtl.js ENV: li(plaintext) > p(inline, plaintext) — Hebrew via inline p island</h3>
+  <div class="prose-sm">
+    <ul dir="rtl">
+      <li dir="rtl"><p dir="rtl">הסיסמה מוצפנת עם AES-256 ונשמרת בשני קבצים</p></li>
+      <li dir="rtl"><p dir="rtl">מפתח ההצפנה נשמר בקובץ <code>C:\pcloud-secure.key</code> כאן</p></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h3>F) CONTROL: same but li WITHOUT unicode-bidi:plaintext</h3>
+  <div class="prose-sm">
+    <ul dir="rtl">
+      <li dir="rtl" style="unicode-bidi: normal !important"><p dir="rtl">הסיסמה מוצפנת עם AES-256 ונשמרת בשני קבצים</p></li>
+      <li dir="rtl" style="unicode-bidi: normal !important"><p dir="rtl">מפתח ההצפנה נשמר בקובץ <code>C:\pcloud-secure.key</code> כאן</p></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h3>G) plaintext li + BLOCK p child</h3>
+  <div class="prose-sm">
+    <ul dir="rtl">
+      <li dir="rtl"><p dir="rtl" style="display:block">הסיסמה מוצפנת עם AES-256 ונשמרת בשני קבצים</p></li>
+      <li dir="rtl"><p dir="rtl" style="display:block">מפתח ההצפנה נשמר בקובץ <code>C:\pcloud-secure.key</code> כאן</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="with-fix">
+  <h3>I) FIX: E + li[dir] { unicode-bidi: isolate }</h3>
+  <div class="prose-sm">
+    <ul dir="rtl">
+      <li dir="rtl"><p dir="rtl">הסיסמה מוצפנת עם AES-256 ונשמרת בשני קבצים</p></li>
+      <li dir="rtl"><p dir="rtl">מפתח ההצפנה נשמר בקובץ <code>C:\pcloud-secure.key</code> כאן</p></li>
+    </ul>
+  </div>
+</section>
+<style>
+  .with-fix .chat-client-root li[dir="rtl"],
+  .with-fix .chat-client-root li[dir="ltr"],
+  .with-fix li[dir="rtl"],
+  .with-fix li[dir="ltr"] { unicode-bidi: isolate !important; }
+</style>
+
+<section>
+  <h3>H) plaintext li, Hebrew as DIRECT text (no p)</h3>
+  <div class="prose-sm">
+    <ul dir="rtl">
+      <li dir="rtl">הסיסמה מוצפנת עם AES-256 ונשמרת בשני קבצים</li>
+      <li dir="rtl">מפתח ההצפנה נשמר בקובץ <code>C:\pcloud-secure.key</code> כאן</li>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>
