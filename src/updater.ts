@@ -131,8 +131,10 @@ export async function runUpdateCheck(context: vscode.ExtensionContext): Promise<
 
                 const url = await findVsixUrl(latest);
                 const file = await downloadVsix(url, latest);
+                // installExtension accepts a Uri to a local .vsix and installs it
+                // silently. (installVSIX always opens a file picker, ignoring the Uri.)
                 await vscode.commands.executeCommand(
-                    'workbench.extensions.action.installVSIX',
+                    'workbench.extensions.installExtension',
                     vscode.Uri.file(file)
                 );
             } catch (err) {
