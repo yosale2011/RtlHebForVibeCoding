@@ -775,6 +775,13 @@
             margin-left: auto !important;
             margin-right: 0 !important;
         }
+
+        /* Bare arithmetic runs isolated by isolateMathRanges stay LTR
+           inside RTL paragraphs so "2 + 3 = 5" doesn't mirror. */
+        [data-rtl-math] {
+            unicode-bidi: isolate !important;
+            direction: ltr !important;
+        }
     `;
     document.head.appendChild(style);
     const planStyle = document.createElement('style');
@@ -1206,6 +1213,59 @@
         return rtlScore >= ltrScore ? 'rtl' : 'ltr';
     }
 
+    // --- Improved direction detection (inspired by claude-desktop-rtl-patch) ---
+
+    var RTL_FIRST = /[\u0590-\u05FF\u0600-\u06FF\u0700-\u074F\u0750-\u077F\u0780-\u07BF\u07C0-\u07FF\u0870-\u089F\u08A0-\u08FF\uFB1D-\uFB4F\uFB50-\uFDFF\uFE70-\uFEFE]/;
+
+    // Get text from element excluding <code> and <pre> children.
+    // Code identifiers confuse direction detection with Latin tokens.
+    function textWithoutCode(el) {
+        var out = '';
+        var nodes = el.childNodes;
+        for (var i = 0; i < nodes.length; i++) {
+            var n = nodes[i];
+            if (n.nodeType === 3) { out += n.textContent; }
+            else if (n.nodeType === 1 && n.tagName !== 'CODE' && n.tagName !== 'PRE') {
+                out += textWithoutCode(n);
+            }
+        }
+        return out;
+    }
+
+    // Remove leading LTR-only noise (filenames, URLs, paths, backtick-code)
+    // so a Hebrew sentence starting with "main.js" still detects as RTL.
+    function stripLeadingLTR(text) {
+        return text
+            .replace(/^[\s]*(?:[\w.\-]+\.[\w]{1,5})\s*/g, '')
+            .replace(/https?:\/\/\S+/g, '')
+            .replace(/[\w.\-]+[\/\\][\w.\-\/\\]+/g, '')
+            .replace(/`[^`]+`/g, '');
+    }
+
+    // Direction of the first strong character: 'rtl', 'ltr', or null.
+    function firstStrongDir(text) {
+        if (!text) return null;
+        var rtlMatch = RTL_FIRST.exec(text);
+        var ltrMatch = /[a-zA-Z]/.exec(text);
+        if (!rtlMatch) return ltrMatch ? 'ltr' : null;
+        if (!ltrMatch) return 'rtl';
+        return rtlMatch.index < ltrMatch.index ? 'rtl' : 'ltr';
+    }
+
+    // 3-layer direction detection for DOM elements:
+    // 1. first-strong on text excluding code children
+    // 2. strip leading LTR noise (filenames/URLs), retry first-strong
+    // 3. fallback to weighted scoring on code-free text
+    function detectDir(el) {
+        var noCode = textWithoutCode(el);
+        if (!getMatches(noCode, RTL_TEXT).length) return 'ltr';
+        var d = firstStrongDir(noCode);
+        if (d === 'rtl') return 'rtl';
+        d = firstStrongDir(stripLeadingLTR(noCode));
+        if (d === 'rtl') return 'rtl';
+        return getTextDir(noCode);
+    }
+
     function getMajorityDir(els) {
         var rtlCount = 0;
         var ltrCount = 0;
@@ -1301,7 +1361,7 @@
         var optionDir = getQuestionnaireOptionDir(el);
         if (optionDir) return optionDir;
         if (isQuestionnaireContainer(el)) return getQuestionnaireDir(el);
-        return getTextDir(getElementText(el));
+        return detectDir(el);
     }
 
     function setManagedDirection(el, desiredDir) {
@@ -1638,12 +1698,156 @@
     }
     // --- end Editor RTL ----------------------------------------------------
 
+    // --- Bare arithmetic isolation (inspired by claude-desktop-rtl-patch) ---
+    //
+    // Inside an RTL paragraph the Unicode bidi algorithm lays bare math
+    // ("2 + 3 = 5") right-to-left, rendering it mirrored as "5 = 3 + 2".
+    // We isolate each math run in its own ltr/unicode-bidi:isolate span.
+
+    var MATH_OP_CHARS = '+\\-*/=<>%' + String.fromCharCode(
+        0xD7, 0xF7, 0xB1, 0x2212, 0x2264, 0x2265, 0x2260,
+        0x2248, 0x2192, 0xB7, 0x2022, 0x2219, 0x2217, 0x22C5, 0x221A);
+    var MATH_OP_RE = new RegExp('[' + MATH_OP_CHARS + ']');
+    var MATH_DIGIT_RE = /[0-9]/;
+    var MATH_TOKEN_RE = new RegExp('^(?:[0-9.,:;()\\[\\]{}|' + MATH_OP_CHARS + ']+|[A-Za-z])$');
+    var MATH_ISLAND_ATTR = 'data-rtl-math';
+
+    function isMathyToken(tok) {
+        return !!tok && MATH_TOKEN_RE.test(tok);
+    }
+
+    function isOperandToken(tok) {
+        return MATH_DIGIT_RE.test(tok) || /^[A-Za-z]$/.test(tok);
+    }
+
+    // Find bare numeric/arithmetic runs as [start, end) index pairs.
+    // A run must contain at least one digit AND one operator.
+    function findMathRanges(text) {
+        var ranges = [];
+        if (!text || !MATH_OP_RE.test(text) || !MATH_DIGIT_RE.test(text)) return ranges;
+        var base = 0;
+        var lines = text.split('\n');
+        for (var li = 0; li < lines.length; li++) {
+            scanLine(lines[li], base);
+            base += lines[li].length + 1;
+        }
+        return ranges;
+
+        function scanLine(line, off) {
+            var toks = [];
+            var re = /\S+/g;
+            var m;
+            while ((m = re.exec(line)) !== null) {
+                toks.push({ v: m[0], start: m.index, end: m.index + m[0].length });
+            }
+            var i = 0;
+            while (i < toks.length) {
+                if (!isMathyToken(toks[i].v)) { i++; continue; }
+                var j = i;
+                while (j + 1 < toks.length && isMathyToken(toks[j + 1].v)) j++;
+                var a = i, b = j;
+                while (a <= b && !isOperandToken(toks[a].v)) a++;
+                while (b >= a && !isOperandToken(toks[b].v)) b--;
+                if (a <= b) {
+                    var s = off + toks[a].start;
+                    var e = off + toks[b].end;
+                    while (e > s && '.,:;'.indexOf(text.charAt(e - 1)) !== -1) e--;
+                    while (e > s && ',:;'.indexOf(text.charAt(s)) !== -1) s++;
+                    var sub = text.slice(s, e);
+                    if (e - s >= 2 && MATH_DIGIT_RE.test(sub) && MATH_OP_RE.test(sub)) {
+                        ranges.push([s, e]);
+                    }
+                }
+                i = j + 1;
+            }
+        }
+    }
+
+    // Split text into alternating {type:'text'|'math', value} segments.
+    function segmentMathText(text) {
+        var segs = [];
+        if (!text) return segs;
+        var ranges = findMathRanges(text);
+        if (!ranges.length) {
+            segs.push({ type: 'text', value: text });
+            return segs;
+        }
+        var pos = 0;
+        for (var i = 0; i < ranges.length; i++) {
+            if (ranges[i][0] > pos) {
+                segs.push({ type: 'text', value: text.slice(pos, ranges[i][0]) });
+            }
+            segs.push({ type: 'math', value: text.slice(ranges[i][0], ranges[i][1]) });
+            pos = ranges[i][1];
+        }
+        if (pos < text.length) segs.push({ type: 'text', value: text.slice(pos) });
+        return segs;
+    }
+
+    // Walk text nodes in chat containers and wrap math runs in LTR-isolated
+    // spans. Skips code, editors, and already-isolated content.
+    var MATH_CONTAINER_SEL = '.streaming-prose, .markdown-root, [class*="markdown" i], .chat-client-root';
+
+    function isolateMathRanges(root) {
+        if (typeof document.createTreeWalker !== 'function') return;
+        var containers = root.querySelectorAll
+            ? root.querySelectorAll(MATH_CONTAINER_SEL)
+            : [];
+        if (root.matches && root.matches(MATH_CONTAINER_SEL)) {
+            containers = [root].concat(Array.from(containers));
+        }
+        for (var ci = 0; ci < containers.length; ci++) {
+            var host = containers[ci];
+            var walker = document.createTreeWalker(host, 4 /* SHOW_TEXT */, {
+                acceptNode: function(node) {
+                    var v = node.nodeValue;
+                    if (!v) return 2; // REJECT
+                    if (!MATH_DIGIT_RE.test(v) || !MATH_OP_RE.test(v)) return 2;
+                    var p = node.parentElement;
+                    if (!p) return 2;
+                    if (p.tagName === 'SCRIPT' || p.tagName === 'STYLE') return 2;
+                    if (p.closest('pre, code, [' + MATH_ISLAND_ATTR + '], [contenteditable="true"], .ProseMirror')) return 2;
+                    return 1; // ACCEPT
+                }
+            });
+            var targets = [];
+            var n;
+            while ((n = walker.nextNode())) targets.push(n);
+            for (var ti = 0; ti < targets.length; ti++) {
+                var textNode = targets[ti];
+                var segs = segmentMathText(textNode.nodeValue);
+                var hasMath = false;
+                for (var si = 0; si < segs.length; si++) {
+                    if (segs[si].type === 'math') { hasMath = true; break; }
+                }
+                if (!hasMath) continue;
+                var frag = document.createDocumentFragment();
+                for (var fi = 0; fi < segs.length; fi++) {
+                    if (segs[fi].type === 'math') {
+                        var span = document.createElement('span');
+                        span.setAttribute(MATH_ISLAND_ATTR, '1');
+                        span.style.unicodeBidi = 'isolate';
+                        span.style.direction = 'ltr';
+                        span.textContent = segs[fi].value;
+                        frag.appendChild(span);
+                    } else {
+                        frag.appendChild(document.createTextNode(segs[fi].value));
+                    }
+                }
+                if (textNode.parentNode) textNode.parentNode.replaceChild(frag, textNode);
+            }
+        }
+    }
+
     function scanAll() {
         scanRoot(document);
         applyPlanDir();
         applyEditorDir();
         try {
             walkShadows(document.documentElement, scanRoot);
+        } catch (e) {}
+        try {
+            isolateMathRanges(document);
         } catch (e) {}
     }
 

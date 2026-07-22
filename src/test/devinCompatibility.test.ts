@@ -63,6 +63,16 @@ test('runtime includes generic Devin chat selectors and protects code surfaces',
         // follows the dir attribute) stays right. Explicit dir must win.
     assert.match(runtime, /\.chat-client-root li\[dir="rtl"\]/);
     assert.match(runtime, /\.chat-client-root li\[dir="ltr"\]/);
+        // Direction detection excludes code children (textWithoutCode) and
+        // strips leading LTR noise (filenames/URLs) before first-strong check.
+    assert.match(runtime, /function textWithoutCode/);
+    assert.match(runtime, /function stripLeadingLTR/);
+    assert.match(runtime, /function firstStrongDir/);
+    assert.match(runtime, /function detectDir/);
+        // Bare arithmetic isolation prevents bidi mirroring of "2 + 3 = 5".
+    assert.match(runtime, /function findMathRanges/);
+    assert.match(runtime, /function isolateMathRanges/);
+    assert.match(runtime, /data-rtl-math/);
 });
 
 test('Devin webview uses a minimal layout-safe runtime', () => {
