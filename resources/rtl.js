@@ -737,11 +737,32 @@
         }
 
         /* Qoder renders chat prose paragraphs as inline-block: a shrink-wrapped
-           RTL paragraph sticks to the left of its LTR container no matter what
-           its dir says. Block display lets text-align:start align the text to
-           the paragraph's own direction. */
-        .streaming-prose p[dir="rtl"] {
+           paragraph sticks to one side of its container regardless of direction.
+           Block display lets text-align:start align text to the paragraph's own
+           direction. Applied unconditionally because unicode-bidi:plaintext (below)
+           decides direction from content, not from the dir attribute. */
+        .streaming-prose p {
             display: block !important;
+        }
+
+        /* Chat responses mix Hebrew prose with heavy English technical terms
+           (code identifiers, file paths, tool names). The weighted character
+           scoring can tip such paragraphs to LTR even though they read Hebrew.
+           plaintext lets the browser use the first strong character of each
+           paragraph — a Hebrew-first paragraph is RTL regardless of how much
+           English it contains. These are block elements with direct text content
+           (not the inline-island case that breaks Devin list items). */
+        .streaming-prose p,
+        .streaming-prose h1,
+        .streaming-prose h2,
+        .streaming-prose h3,
+        .streaming-prose h4,
+        .streaming-prose h5,
+        .streaming-prose h6,
+        .streaming-prose li,
+        .streaming-prose blockquote {
+            unicode-bidi: plaintext !important;
+            text-align: start !important;
         }
 
         /* A table's column order follows the table element's own direction,

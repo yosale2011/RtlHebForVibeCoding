@@ -39,9 +39,9 @@ test('runtime includes generic Devin chat selectors and protects code surfaces',
     assert.match(runtime, /contenteditable/);
     // Qoder chat: headings and prose blocks inside .streaming-prose, plus the
     // inline-block paragraph workaround and the sent user message bubble.
-    assert.match(runtime, /\.streaming-prose h2/);
     assert.match(runtime, /\.streaming-prose p/);
-    assert.match(runtime, /\.streaming-prose p\[dir="rtl"\]/);
+    assert.match(runtime, /\.streaming-prose h2/);
+    assert.match(runtime, /\.streaming-prose p \{/);
         // Qoder chat tables: the table element itself needs dir (column order)
         // and an RTL table must be pushed to the right edge of its LTR container.
     assert.match(runtime, /'\.streaming-prose table',/);
