@@ -73,6 +73,10 @@ test('runtime includes generic Devin chat selectors and protects code surfaces',
     assert.match(runtime, /function findMathRanges/);
     assert.match(runtime, /function isolateMathRanges/);
     assert.match(runtime, /data-rtl-math/);
+        // The list/table container majority must use the first-strong detector
+        // so an <ol> agrees with the direction its <li> children receive
+        // (otherwise the numbered marker detaches to the wrong side).
+    assert.match(runtime, /getMajorityDir[\s\S]*?detectDir\(els\[i\]\)/);
 });
 
 test('Devin webview uses a minimal layout-safe runtime', () => {

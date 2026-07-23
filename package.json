@@ -2,7 +2,7 @@
   "name": "yb-rtl",
   "displayName": "YB RTL — Hebrew for Cursor, Qoder, Devin & AI Agents",
   "description": "Privacy-first RTL support for Cursor, Qoder and Devin chat, Monaco, Codex and Claude Code agent webviews.",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "publisher": "local",
   "license": "Apache-2.0",
   "repository": {

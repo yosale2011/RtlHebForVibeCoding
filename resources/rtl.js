@@ -1270,7 +1270,12 @@
         var rtlCount = 0;
         var ltrCount = 0;
         for (var i = 0; i < els.length; i++) {
-            var dir = getTextDir(els[i].textContent || '');
+            // Use the first-strong-aware detector so a list/table container
+            // agrees with the direction its own items receive. Raw weighted
+            // scoring here tipped Hebrew items with heavy English technical
+            // terms to LTR, leaving <ol> LTR (marker on the left) while each
+            // <li> went RTL (text on the right) — a detached marker.
+            var dir = detectDir(els[i]);
             if (dir === 'rtl') rtlCount++;
             else ltrCount++;
         }
