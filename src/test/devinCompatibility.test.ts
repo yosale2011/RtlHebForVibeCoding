@@ -105,5 +105,15 @@ test('Codex runtime adopts first-strong detection and math isolation', () => {
     assert.match(runtime, /'strong,em,b,i'/);
     // Code surfaces stay LTR.
     assert.match(runtime, /pre,code,\.monaco-editor/);
+    // A marker-scoped !important stylesheet makes the RTL decision authoritative
+    // over Codex's Tailwind utility classes and survives React re-renders.
+    assert.match(runtime, /function ensureStyle/);
+    assert.match(runtime, /data-rtl-heb/);
+    assert.match(runtime, /text-align:right !important/);
+    // Codex streams tokens: coalesce every mutation into a debounced full
+    // re-scan and observe characterData, not just added nodes.
+    assert.match(runtime, /function schedule/);
+    assert.match(runtime, /apply\(document\)/);
+    assert.match(runtime, /characterData: true/);
 });
 

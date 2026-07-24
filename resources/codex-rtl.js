@@ -176,8 +176,31 @@
         }
     }
 
+    // --- Stylesheet ---------------------------------------------------------
+    // Codex ships Tailwind utility classes (e.g. text-left) on its prose
+    // elements. Inline styles usually win, but React can re-apply classes on
+    // re-render and some utilities are emitted late; a marker-scoped
+    // !important sheet makes our decision authoritative and survives
+    // re-renders. It is scoped to [data-rtl-heb], an attribute only this
+    // script sets, so Codex's own dir usage (menus, RTL locales) is untouched.
+    const STYLE_ID = 'rtl-hebrew-codex-style';
+    const MARK = 'data-rtl-heb';
+    function ensureStyle() {
+        if (document.getElementById(STYLE_ID)) return;
+        const style = document.createElement('style');
+        style.id = STYLE_ID;
+        style.textContent =
+            '[' + MARK + '="rtl"]{direction:rtl !important;text-align:right !important;}' +
+            '[' + MARK + '="ltr"]{direction:ltr !important;text-align:left !important;}' +
+            'ul[' + MARK + '="rtl"],ol[' + MARK + '="rtl"]{padding-inline-start:1.5em !important;padding-inline-end:0 !important;list-style-position:outside !important;}' +
+            'pre[' + MARK + '="ltr"],code[' + MARK + '="ltr"]{text-align:left !important;direction:ltr !important;}' +
+            '[' + MATH_ISLAND_ATTR + ']{unicode-bidi:isolate !important;direction:ltr !important;}';
+        (document.head || document.documentElement).appendChild(style);
+    }
+
     // --- Apply --------------------------------------------------------------
-    function apply(root) {
+    function apply(scope) {
+        const root = scope && scope.nodeType === 1 ? scope : document;
         const elements = [];
         if (root.nodeType === 1 && root.matches?.(SELECTOR)) elements.push(root);
         root.querySelectorAll?.(SELECTOR).forEach((el) => elements.push(el));
@@ -185,31 +208,45 @@
             if (el.closest('pre,code,.monaco-editor,[data-language]')) continue;
             const dir = detectDir(el);
             if (!dir) continue;
-            el.dir = dir;
-            el.style.textAlign = 'start';
+            if (el.getAttribute('dir') !== dir) el.dir = dir;
+            if (el.getAttribute(MARK) !== dir) el.setAttribute(MARK, dir);
         }
         // Isolate inline emphasis so a leading bold Latin label ("Qoder:")
         // sits at the RTL start (right) instead of being pushed to the left.
         root.querySelectorAll?.('strong,em,b,i').forEach((el) => {
             if (el.closest('pre,code,.monaco-editor,[data-language]')) return;
-            el.style.unicodeBidi = 'isolate';
+            if (el.style.unicodeBidi !== 'isolate') el.style.unicodeBidi = 'isolate';
         });
         root.querySelectorAll?.('pre,code,.monaco-editor').forEach((el) => {
-            el.dir = 'ltr';
-            el.style.textAlign = 'left';
+            if (el.getAttribute('dir') !== 'ltr') el.dir = 'ltr';
+            if (el.getAttribute(MARK) !== 'ltr') el.setAttribute(MARK, 'ltr');
         });
         try { isolateMath(root); } catch (e) {}
     }
 
+    // Codex streams tokens and React re-renders whole subtrees, so a
+    // per-mutation "apply the added nodes only" pass silently drops most
+    // content (and text-only streaming updates emit no addedNodes at all).
+    // Instead, coalesce every mutation into a single debounced full re-scan;
+    // detectDir is idempotent so re-scanning is cheap and correct.
     let scheduled = false;
-    const observer = new MutationObserver((records) => {
+    function schedule() {
         if (scheduled) return;
         scheduled = true;
         requestAnimationFrame(() => {
             scheduled = false;
-            for (const record of records) for (const node of record.addedNodes) apply(node);
+            try { apply(document); } catch (e) {}
         });
-    });
-    apply(document);
-    observer.observe(document.documentElement, { childList: true, subtree: true });
+    }
+    const observer = new MutationObserver(schedule);
+    function start() {
+        ensureStyle();
+        apply(document);
+        observer.observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+    } else {
+        start();
+    }
 })();
