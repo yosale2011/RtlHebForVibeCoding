@@ -89,3 +89,21 @@ test('Devin webview uses a minimal layout-safe runtime', () => {
     assert.match(runtime, /table\[dir="rtl"\]/);
     assert.doesNotMatch(runtime, /monaco-editor|position:\s*absolute|transform:/);
 });
+
+test('Codex runtime adopts first-strong detection and math isolation', () => {
+    const runtime = fs.readFileSync(path.join(root, 'resources', 'codex-rtl.js'), 'utf8');
+    // First-strong, code-aware detection (upgraded from a crude 0.3 ratio).
+    assert.match(runtime, /function textWithoutCode/);
+    assert.match(runtime, /function stripLeadingLTR/);
+    assert.match(runtime, /function firstStrongDir/);
+    assert.match(runtime, /function detectDir/);
+    // Bare-arithmetic / version-number isolation.
+    assert.match(runtime, /function findMathRanges/);
+    assert.match(runtime, /function isolateMath/);
+    assert.match(runtime, /data-rtl-math/);
+    // Inline emphasis is isolated so a leading bold Latin label stays at start.
+    assert.match(runtime, /'strong,em,b,i'/);
+    // Code surfaces stay LTR.
+    assert.match(runtime, /pre,code,\.monaco-editor/);
+});
+
